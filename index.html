@@ -9,15 +9,26 @@
 <link rel="preload" href="assets/fonts/MedeoSansVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <style>
-.hero{padding-block:40px 56px}
-.hero__grid{display:grid;gap:28px}
-.hero__photo{aspect-ratio:4/5;object-fit:cover;max-width:none;width:calc(100% + var(--gutter)*2);margin-inline:calc(var(--gutter)*-1)}
-.hero__lead{font-size:1.1rem;max-width:34em}
-.hero__roles{font:500 .8rem/1.6 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.hero{padding-block:0 48px;overflow:hidden}
+.hero__grid{display:grid;gap:0}
+.hero__photo{order:-1;aspect-ratio:1/1.02;object-fit:cover;object-position:50% 18%;max-width:none;width:calc(100% + var(--gutter)*2);margin-inline:calc(var(--gutter)*-1);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+.hero__text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;margin-top:-72px;animation:rise .9s var(--ease) both}
+.hero h1{font-size:clamp(3.2rem,15vw,6.75rem);line-height:.95;letter-spacing:-.05em;margin-bottom:.2em}
+.hero__roles{font:500 .72rem/1.6 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
+.actions{order:3;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.actions .btn{padding-inline:16px;white-space:nowrap}
+.hero__lead{order:4;font-size:1.05rem;max-width:32em;margin:26px 0 0}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
 .head-row{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
 .head-row h2{margin:0}
-.more{font-weight:600;white-space:nowrap;border-bottom:1px solid var(--line);padding-bottom:2px}
-.more:hover{border-color:var(--text)}
+.more{display:inline-flex;align-items:center;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--text);padding-bottom:3px;background:linear-gradient(var(--line-2),var(--line-2)) 0 100%/100% 1px no-repeat,linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:background-size .35s var(--ease),color .25s}
+.more:hover{background-size:100% 1px,100% 1px;color:var(--accent)}
+.svc{display:grid;gap:32px;padding:28px;background:radial-gradient(520px 220px at 0 0,rgba(226,171,82,.09),transparent 70%),linear-gradient(180deg,var(--bg-2),#0e0e10)}
+.svc__head h2{margin-bottom:.4em}
+.svc__lead{color:var(--text);font-size:1.12rem;line-height:1.5;margin:0 0 24px}
+.svc .checks{margin:0}
+.svc .checks li{color:var(--text);font-size:1.02rem}
+.svc .extra .checks li{color:var(--muted)}
 #works{scroll-margin-top:var(--header-h)}
 .extra{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .extra .eyebrow{margin-bottom:12px}
@@ -27,18 +38,31 @@
 .cover:hover img{transform:scale(1.05)}
 .cover::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/40px no-repeat}
 .cover.is-playing::after{background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/36px no-repeat}
+.cover::after{inset:auto;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;z-index:2;border:1px solid rgba(255,255,255,.22);background:rgba(10,10,11,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/16px no-repeat;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background-color .25s,border-color .25s,transform .25s var(--ease)}
+.cover.is-playing::after{border-color:var(--accent);background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317120a'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/16px no-repeat}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
+.cover{transition:border-color .3s,transform .3s var(--ease)}
+.cover.is-active{border-color:var(--accent)}
+.cover:active{transform:scale(.98)}
+.cover:hover img{transform:scale(1.03)}
+@media(hover:hover){.cover:hover::after{transform:scale(1.06);border-color:var(--accent);background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317120a'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/16px no-repeat}.cover.is-playing:hover::after{background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317120a'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/16px no-repeat}}
 .contact{text-align:center}
 .contact p{max-width:30em;margin-inline:auto}
 .contact .btn{margin-top:8px}
 .contact__mail{display:block;margin-top:18px;color:var(--muted)}
-.socials{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 24px;padding:0;list-style:none}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:0 0 24px;padding:0;list-style:none}
 .socials a{color:var(--text);border-bottom:1px solid var(--line)}
 .socials a:hover{border-color:var(--text)}
 @media(min-width:768px){
-  .hero{padding-block:72px 96px}
-  .hero__grid{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}
-  .hero__photo{order:2;width:100%;margin-inline:0;border-radius:var(--radius);border:1px solid var(--line)}
+  .hero{padding-block:72px 112px}
+  .hero__grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
+  .hero__photo{order:2;aspect-ratio:4/5;max-height:78vh;width:100%;margin-inline:0;border-radius:var(--radius-lg);border:1px solid var(--line);-webkit-mask-image:none;mask-image:none}
+  .hero__text{margin-top:0}
+  .hero__lead{order:0;margin:0}
+  .actions{order:0;grid-template-columns:repeat(2,max-content);gap:12px;margin-top:36px}
+  .actions .btn{padding-inline:28px}
   .covers{grid-template-columns:repeat(4,1fr);gap:16px;max-width:none}
+  .svc{grid-template-columns:.9fr 1.1fr;gap:64px;padding:52px}
 }
 </style>
 </head>
@@ -48,13 +72,15 @@
   <!-- Визитка -->
   <section class="hero">
     <div class="container hero__grid">
-      <div>
+      <div class="hero__text">
         <span class="eyebrow">Музыкальный продюсер</span>
         <h1>MAX<br>MALVIN</h1>
         <p class="hero__roles">Продюсер · Звукорежиссёр · Музыкант</p>
         <p class="hero__lead">Делаю песни на заказ: от идеи до финального результата. Пишу аранжировки, свожу и мастерю. Знаю музыкальную индустрию с разных сторон: в студии и на сцене.</p>
-        <a class="btn" href="about.html">Обо мне</a>
-        <a class="btn btn--ghost" href="#works">Слушать работы</a>
+        <div class="actions">
+          <a class="btn" href="about.html">Обо мне</a>
+          <a class="btn btn--ghost" href="#works">Слушать работы</a>
+        </div>
       </div>
       <img class="hero__photo" src="assets/img/main-page-photo.webp" alt="Макс Малвин — музыкальный продюсер" width="800" height="1000" fetchpriority="high">
     </div>
@@ -79,13 +105,14 @@
   <!-- Услуги -->
   <section class="section" id="services">
     <div class="container">
-      <div class="card">
-        <div class="head-row">
+      <div class="card svc">
+        <div class="svc__head">
           <h2>Услуги</h2>
+          <p class="svc__lead">Продюсирование песни от идеи до финального результата.</p>
           <a class="more" href="services.html">Подробнее →</a>
         </div>
-        <p style="color:var(--text)">Продюсирование песни от идеи до финального результата.</p>
-        <ul class="checks" style="margin-top:0">
+        <div class="svc__body">
+        <ul class="checks">
           <li>Аранжировка: партии инструментов, саунд-дизайн, структура песни</li>
           <li>Сведение и мастеринг</li>
           <li>Запись голоса на студии</li>
@@ -98,6 +125,7 @@
             <li>Видеопродакшен</li>
             <li>Фотосъёмка</li>
           </ul>
+        </div>
         </div>
       </div>
     </div>
