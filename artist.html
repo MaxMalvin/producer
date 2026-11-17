@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>Артист — MAX MALVIN</title>
+<meta name="description" content="Собственное творчество Макса Малвина: авторские релизы и развитие как артиста.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.page-head{padding-block:40px 24px}
+.artist-hero{display:grid;gap:28px}
+.artist-hero img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)}
+.page-head p{max-width:34em;font-size:1.05rem}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.soon{padding:32px;text-align:center}
+.soon p{margin:0}
+@media(min-width:768px){
+  .page-head{padding-block:72px 40px}
+  .artist-hero{grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+  .artist-hero img{order:2}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="page-head">
+    <div class="container artist-hero">
+      <div>
+        <span class="eyebrow">Артист</span>
+        <h1>MAX MALVIN</h1>
+        <p>Помимо работы продюсером, я занимаюсь собственным творчеством и развиваюсь как артист. Здесь я буду публиковать свои релизы.</p>
+        <div class="links">
+          <a class="btn" href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn btn--ghost" href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn--ghost" href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Telegram-канал</a>
+        </div>
+      </div>
+      <img src="assets/img/artist.JPG" alt="Макс Малвин — артист" width="800" height="1000" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="card soon">
+        <span class="eyebrow">Релизы</span>
+        <h2>Скоро здесь появится моя музыка</h2>
+        <p>Следите за новостями в соцсетях.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>Портфолио — MAX MALVIN</title>
+<meta name="description" content="Работы Макса Малвина: продюсирование, аранжировка и сведение песен. Послушайте примеры.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.page-head{padding-block:40px 8px}
+.page-head p{max-width:34em;font-size:1.05rem}
+.tracks{display:grid;gap:16px;grid-template-columns:1fr}
+.track{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:center;padding:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s}
+.track:has(.is-active){border-color:#6b6b76}
+.track__cover{position:relative;display:block;width:104px;aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--bg-3)}
+.track__cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+.track__cover:hover img{transform:scale(1.05)}
+.track__cover::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.38) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/36px no-repeat;transition:background-color .2s}
+.track__cover.is-playing::after{background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/32px no-repeat}
+.track__title{margin:0 0 2px;font-size:1.15rem;line-height:1.25}
+.track__artist{margin:0 0 10px;color:var(--text);opacity:.85}
+.track__role{margin:0;font:.78rem/1.5 var(--font-mono);color:var(--muted)}
+.track__role b{font-weight:500;color:var(--text)}
+@media(min-width:768px){
+  .page-head{padding-block:72px 16px}
+  .tracks{grid-template-columns:repeat(2,1fr);gap:20px}
+  .track{grid-template-columns:132px 1fr;padding:16px}
+  .track__cover{width:132px}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Портфолио</span>
+      <h1>Работы</h1>
+      <p>Нажмите на обложку, чтобы послушать трек. Плеер откроется внизу экрана.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tracks">
+
+        <article class="track">
+          <button class="track__cover" type="button" data-track data-src="assets/portfolio/Armen - Butterflies.mp3" data-title="Butterflies" data-artist="Armen" data-cover="assets/portfolio/Armen - Butterflies.JPG" aria-label="Слушать: Armen — Butterflies">
+            <img src="assets/portfolio/Armen%20-%20Butterflies.JPG" alt="" loading="lazy">
+          </button>
+          <div>
+            <h2 class="track__title">Butterflies</h2>
+            <p class="track__artist">Armen</p>
+            <p class="track__role"><b>Роль:</b> продюсирование, сведение</p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button class="track__cover" type="button" data-track data-src="assets/portfolio/Armen - Since you have  disappeared.mp3" data-title="Since you have disappeared" data-artist="Armen" data-cover="assets/portfolio/Armen - Since you have  disappeared.JPG" aria-label="Слушать: Armen — Since you have disappeared">
+            <img src="assets/portfolio/Armen%20-%20Since%20you%20have%20%20disappeared.JPG" alt="" loading="lazy">
+          </button>
+          <div>
+            <h2 class="track__title">Since you have disappeared</h2>
+            <p class="track__artist">Armen</p>
+            <p class="track__role"><b>Роль:</b> продюсирование, сведение</p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button class="track__cover" type="button" data-track data-src="assets/portfolio/Вера Шимко - За миражами.mp3" data-title="За миражами" data-artist="Вера Шимко" data-cover="assets/portfolio/Вера Шимко - За миражами.jpeg" aria-label="Слушать: Вера Шимко — За миражами">
+            <img src="assets/portfolio/Вера%20Шимко%20-%20За%20миражами.jpeg" alt="" loading="lazy">
+          </button>
+          <div>
+            <h2 class="track__title">За миражами</h2>
+            <p class="track__artist">Вера Шимко</p>
+            <p class="track__role"><b>Роль:</b> продюсирование, сведение</p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button class="track__cover" type="button" data-track data-src="assets/portfolio/Саша Козлова - Линиями.mp3" data-title="Линиями" data-artist="Саша Козлова" data-cover="assets/portfolio/Саша Козлова - Линиями.png" aria-label="Слушать: Саша Козлова — Линиями">
+            <img src="assets/portfolio/Саша%20Козлова%20-%20Линиями.png" alt="" loading="lazy">
+          </button>
+          <div>
+            <h2 class="track__title">Линиями</h2>
+            <p class="track__artist">Саша Козлова</p>
+            <p class="track__role"><b>Роль:</b> продюсирование, сведение</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" style="text-align:center;padding-top:0">
+    <div class="container">
+      <h2>Хотите так же?</h2>
+      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn--ghost" href="services.html">Услуги</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

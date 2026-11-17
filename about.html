@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>Обо мне — MAX MALVIN</title>
+<meta name="description" content="Макс Малвин: продюсер, звукорежиссёр, музыкант. Высшее музыкальное образование, 15 лет в музыкальной индустрии.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.about{padding-block:40px 24px;text-align:center}
+.avatar{width:min(60vw,220px);aspect-ratio:1;margin:0 auto 28px;border-radius:50%;object-fit:cover;border:1px solid var(--line);box-shadow:0 0 0 8px var(--bg-2)}
+.about__roles{font:500 .8rem/1.6 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.about__lead{max-width:34em;margin:36px auto 0;font-size:1.1rem}
+.about__lead::before{content:"\201C";display:block;height:.55em;margin-bottom:.25em;font:700 5rem/1 Georgia,serif;color:var(--muted);opacity:.6}
+.facts{display:grid;gap:16px}
+.fact h3{margin-bottom:.5em}
+.fact p{margin:0}
+.cta{text-align:center}
+.cta p{max-width:30em;margin-inline:auto}
+.cta .btn{margin:6px 4px}
+@media(min-width:768px){
+  .about{padding-block:72px 40px}
+  .facts{grid-template-columns:repeat(3,1fr);gap:20px}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="about">
+    <div class="container">
+      <img class="avatar" src="assets/img/about.jpg" alt="Макс Малвин" width="440" height="440" fetchpriority="high">
+      <span class="eyebrow">Обо мне</span>
+      <h1>MAX MALVIN</h1>
+      <p class="about__roles">Продюсер · Звукорежиссёр · Музыкант</p>
+      <p class="about__lead">Я очень люблю свою работу и отдаюсь делу с душой и всем сердцем. Всегда вовлекаюсь в проект артиста и в сам процесс. Я творческий человек, и для меня важен результат: всеми силами стараюсь добиться по-настоящему качественного звучания.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="facts">
+        <article class="card fact"><h3>15 лет в музыкальной индустрии</h3><p>За это время побывал в разных ролях: артист на сцене, музыкант, звукорежиссёр на площадке. Знаю индустрию с разных сторон.</p></article>
+        <article class="card fact"><h3>Высшее музыкальное образование</h3><p>Профессионал, дипломированный специалист.</p></article>
+        <article class="card fact"><h3>Творческая личность</h3><p>Звукорежиссёр, музыкант, гитарист, оператор, монтажёр и колорист. Закрываю и музыкальные, и визуальные задачи: от песни до клипа.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Давайте познакомимся</h2>
+      <p>Послушайте мои работы или напишите мне в Telegram.</p>
+      <a class="btn" href="portfolio.html">Слушать работы</a>
+      <a class="btn btn--ghost" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

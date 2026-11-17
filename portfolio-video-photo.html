@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>Видео и фото — MAX MALVIN</title>
+<meta name="description" content="Примеры работ: музыкальные видео, видеопродакшен и фото от Макса Малвина.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.page-head{padding-block:40px 8px}
+.page-head p{max-width:34em;font-size:1.05rem}
+.gallery{column-count:2;column-gap:12px}
+.project+.project{margin-top:56px}
+.mix{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:center}
+.mix a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg-2)}
+.mix img{width:100%;height:auto;transition:transform .4s var(--ease)}
+.mix a:hover img{transform:scale(1.03)}
+.mix--3{grid-template-columns:repeat(3,1fr);margin-top:12px}
+@media(min-width:768px){.mix{gap:16px}.mix--3{margin-top:16px}}
+.project h2{font-size:clamp(1.3rem,4vw,1.8rem);margin-bottom:18px}
+.gallery a{display:block;margin-bottom:12px;border-radius:12px;overflow:hidden;border:1px solid var(--line);break-inside:avoid;background:var(--bg-2)}
+.gallery img{width:100%;height:auto;transition:transform .4s var(--ease)}
+.gallery a:hover img{transform:scale(1.03)}
+.cta{text-align:center}
+.cta p{max-width:30em;margin-inline:auto}
+@media(min-width:768px){
+  .page-head{padding-block:72px 16px}
+  .gallery{column-count:3;column-gap:16px}
+  .gallery a{margin-bottom:16px}
+}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.94);display:flex;align-items:center}
+.lb[hidden]{display:none}
+.lb__track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.lb__track::-webkit-scrollbar{display:none}
+.lb__slide{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:grid;place-items:center;padding:60px 12px}
+.lb__slide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.lb__close,.lb__nav{position:absolute;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.6rem;line-height:1;display:grid;place-items:center}
+.lb__close{top:calc(10px + env(safe-area-inset-top));right:12px}
+.lb__nav{top:50%;transform:translateY(-50%)}
+.lb__prev{left:12px}
+.lb__next{right:12px}
+.lb__nav:disabled{opacity:.25}
+.lb__count{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;font:.8rem var(--font-mono);color:var(--muted)}
+@media(max-width:767px){.lb__nav{display:none}}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Видео и фото</span>
+      <h1>Примеры работ</h1>
+      <p>Снимаю музыкальные видео, занимаюсь видеопродакшеном и фото: съёмка, монтаж, цвет.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="project">
+        <h2>Luciee</h2>
+        <div class="gallery">
+          <a href="assets/portfolio-video-photo/luciee1.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/luciee1.png" alt="Luciee, кадр 1" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/luciee2.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/luciee2.png" alt="Luciee, кадр 2" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/luciee3.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/luciee3.png" alt="Luciee, кадр 3" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/luciee4.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/luciee4.png" alt="Luciee, кадр 4" loading="lazy"></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h2>Маша Кольцова</h2>
+        <div class="gallery">
+          <a href="assets/portfolio-video-photo/МашаКольцова1.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/МашаКольцова1.png" alt="Маша Кольцова, кадр 1" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/МашаКольцова2.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/МашаКольцова2.png" alt="Маша Кольцова, кадр 2" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/МашаКольцова3.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/МашаКольцова3.png" alt="Маша Кольцова, кадр 3" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/МашаКольцова4.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/МашаКольцова4.png" alt="Маша Кольцова, кадр 4" loading="lazy"></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h2>Armen</h2>
+        <div class="mix">
+          <a href="assets/portfolio-video-photo/arm1.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/arm1.png" alt="Armen, кадр 1" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/arm2.PNG" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/arm2.PNG" alt="Armen, кадр 2" loading="lazy"></a>
+        </div>
+        <div class="mix mix--3">
+          <a href="assets/portfolio-video-photo/armen-spotify1.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/armen-spotify1.png" alt="Armen, Spotify 1" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/armen-spotify2.jpg" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/armen-spotify2.jpg" alt="Armen, Spotify 2" loading="lazy"></a>
+          <a href="assets/portfolio-video-photo/armen-spotify3.png" target="_blank" rel="noopener"><img src="assets/portfolio-video-photo/armen-spotify3.png" alt="Armen, Spotify 3" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" style="padding-top:0">
+    <div class="container">
+      <h2>Нужна съёмка?</h2>
+      <p>Смета составляется отдельно под каждый проект. Напишите, и я всё рассчитаю.</p>
+      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116</p>
+    <p>Сфера деятельности: артист, музыкант, певец</p>
+    <p><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.project a')];
+  if (!links.length) return;
+  const lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.hidden = true;
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.setAttribute('aria-label', 'Просмотр фото');
+  lb.innerHTML = '<button class="lb__close" type="button" aria-label="Закрыть">×</button>'
+    + '<button class="lb__nav lb__prev" type="button" aria-label="Назад">‹</button>'
+    + '<div class="lb__track"></div>'
+    + '<button class="lb__nav lb__next" type="button" aria-label="Вперёд">›</button>'
+    + '<div class="lb__count"></div>';
+  document.body.appendChild(lb);
+  const track = lb.querySelector('.lb__track');
+  const count = lb.querySelector('.lb__count');
+  const prev = lb.querySelector('.lb__prev');
+  const next = lb.querySelector('.lb__next');
+  const closeBtn = lb.querySelector('.lb__close');
+  let built = false, idx = 0;
+
+  const build = () => {
+    links.forEach((a) => {
+      const s = document.createElement('div');
+      s.className = 'lb__slide';
+      const im = new Image();
+      im.decoding = 'async';
+      im.alt = a.querySelector('img').alt;
+      im.src = a.getAttribute('href');
+      s.appendChild(im);
+      track.appendChild(s);
+    });
+    built = true;
+  };
+  const go = (i, smooth) => {
+    i = Math.max(0, Math.min(links.length - 1, i));
+    track.scrollTo({ left: i * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+  };
+  const update = () => {
+    idx = Math.round(track.scrollLeft / (track.clientWidth || 1));
+    count.textContent = (idx + 1) + ' / ' + links.length;
+    prev.disabled = idx === 0;
+    next.disabled = idx === links.length - 1;
+  };
+  const open = (i) => {
+    if (!built) build();
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    go(i, false);
+    update();
+    closeBtn.focus();
+  };
+  const close = () => { lb.hidden = true; document.body.style.overflow = ''; };
+
+  links.forEach((a, i) => a.addEventListener('click', (e) => { e.preventDefault(); open(i); }));
+  track.addEventListener('scroll', update, { passive: true });
+  prev.addEventListener('click', () => go(idx - 1, true));
+  next.addEventListener('click', () => go(idx + 1, true));
+  closeBtn.addEventListener('click', close);
+  track.addEventListener('click', (e) => { if (e.target.classList.contains('lb__slide')) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') go(idx - 1, true);
+    else if (e.key === 'ArrowRight') go(idx + 1, true);
+  });
+})();
+</script>
+</body>
+</html>

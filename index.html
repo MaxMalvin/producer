@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>MAX MALVIN — музыкальный продюсер, звукорежиссёр, музыкант</title>
+<meta name="description" content="Продюсирование, аранжировка, сведение и мастеринг песен на заказ. Макс Малвин — музыкальный продюсер и звукорежиссёр.">
+<link rel="preload" href="assets/fonts/MedeoSansVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.hero{padding-block:40px 56px}
+.hero__grid{display:grid;gap:28px}
+.hero__photo{aspect-ratio:4/5;object-fit:cover;max-width:none;width:calc(100% + var(--gutter)*2);margin-inline:calc(var(--gutter)*-1)}
+.hero__lead{font-size:1.1rem;max-width:34em}
+.hero__roles{font:500 .8rem/1.6 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.head-row{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.head-row h2{margin:0}
+.more{font-weight:600;white-space:nowrap;border-bottom:1px solid var(--line);padding-bottom:2px}
+.more:hover{border-color:var(--text)}
+#works{scroll-margin-top:var(--header-h)}
+.extra{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.extra .eyebrow{margin-bottom:12px}
+.covers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:560px;margin-inline:auto}
+.cover{position:relative;display:block;aspect-ratio:1;padding:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--bg-3)}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+.cover:hover img{transform:scale(1.05)}
+.cover::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/40px no-repeat}
+.cover.is-playing::after{background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/36px no-repeat}
+.contact{text-align:center}
+.contact p{max-width:30em;margin-inline:auto}
+.contact .btn{margin-top:8px}
+.contact__mail{display:block;margin-top:18px;color:var(--muted)}
+.socials{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 24px;padding:0;list-style:none}
+.socials a{color:var(--text);border-bottom:1px solid var(--line)}
+.socials a:hover{border-color:var(--text)}
+@media(min-width:768px){
+  .hero{padding-block:72px 96px}
+  .hero__grid{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}
+  .hero__photo{order:2;width:100%;margin-inline:0;border-radius:var(--radius);border:1px solid var(--line)}
+  .covers{grid-template-columns:repeat(4,1fr);gap:16px;max-width:none}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <!-- Визитка -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Музыкальный продюсер</span>
+        <h1>MAX<br>MALVIN</h1>
+        <p class="hero__roles">Продюсер · Звукорежиссёр · Музыкант</p>
+        <p class="hero__lead">Делаю песни на заказ: от идеи до финального результата. Пишу аранжировки, свожу и мастерю. Знаю музыкальную индустрию с разных сторон: в студии и на сцене.</p>
+        <a class="btn" href="about.html">Обо мне</a>
+        <a class="btn btn--ghost" href="#works">Слушать работы</a>
+      </div>
+      <img class="hero__photo" src="assets/img/main-page-photo.jpg" alt="Макс Малвин — музыкальный продюсер" width="800" height="1000" fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- Работы -->
+  <section class="section" id="works">
+    <div class="container">
+      <div class="head-row">
+        <h2>Мои работы</h2>
+        <a class="more" href="portfolio.html">Всё портфолио →</a>
+      </div>
+      <div class="covers">
+        <button class="cover" type="button" data-track data-src="assets/portfolio/Armen - Butterflies.mp3" data-title="Butterflies" data-artist="Armen" data-cover="assets/portfolio/Armen - Butterflies.JPG" aria-label="Слушать: Armen — Butterflies"><img src="assets/portfolio/Armen%20-%20Butterflies.JPG" alt="" loading="lazy"></button>
+        <button class="cover" type="button" data-track data-src="assets/portfolio/Armen - Since you have  disappeared.mp3" data-title="Since you have disappeared" data-artist="Armen" data-cover="assets/portfolio/Armen - Since you have  disappeared.JPG" aria-label="Слушать: Armen — Since you have disappeared"><img src="assets/portfolio/Armen%20-%20Since%20you%20have%20%20disappeared.JPG" alt="" loading="lazy"></button>
+        <button class="cover" type="button" data-track data-src="assets/portfolio/Вера Шимко - За миражами.mp3" data-title="За миражами" data-artist="Вера Шимко" data-cover="assets/portfolio/Вера Шимко - За миражами.jpeg" aria-label="Слушать: Вера Шимко — За миражами"><img src="assets/portfolio/Вера%20Шимко%20-%20За%20миражами.jpeg" alt="" loading="lazy"></button>
+        <button class="cover" type="button" data-track data-src="assets/portfolio/Саша Козлова - Линиями.mp3" data-title="Линиями" data-artist="Саша Козлова" data-cover="assets/portfolio/Саша Козлова - Линиями.png" aria-label="Слушать: Саша Козлова — Линиями"><img src="assets/portfolio/Саша%20Козлова%20-%20Линиями.png" alt="" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="card">
+        <div class="head-row">
+          <h2>Услуги</h2>
+          <a class="more" href="services.html">Подробнее →</a>
+        </div>
+        <p style="color:var(--text)">Продюсирование песни от идеи до финального результата.</p>
+        <ul class="checks" style="margin-top:0">
+          <li>Аранжировка: партии инструментов, саунд-дизайн, структура песни</li>
+          <li>Сведение и мастеринг</li>
+          <li>Запись голоса на студии</li>
+          <li>Запись и сведение живых концертов</li>
+        </ul>
+        <div class="extra">
+          <span class="eyebrow">Дополнительно</span>
+          <ul class="checks" style="margin-top:0">
+            <li>Съёмка музыкальных видео</li>
+            <li>Видеопродакшен</li>
+            <li>Фотосъёмка</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Консультация -->
+  <section class="section" id="consult">
+    <div class="container">
+      <div class="card">
+        <span class="eyebrow">Консультация</span>
+        <h2>Консультация в формате стрима</h2>
+        <p>Я показываю экран и звук прямо из своего проекта: вы видите, как всё устроено, и слышите результат в реальном времени.</p>
+        <ul class="checks">
+          <li>Вопросы по музыке, аранжировке и сведению</li>
+          <li>Вопросы по работе в DAW</li>
+          <li>Разбираем на живом проекте</li>
+        </ul>
+        <p style="margin-top:24px;text-align:center"><a class="btn" href="education.html">Обучение и консультации</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <span class="eyebrow">Контакты</span>
+      <h2>Обсудим вашу песню?</h2>
+      <p>Напишите в Telegram: расскажу, как проходит работа, и подскажу по срокам и стоимости.</p>
+      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="contact__mail" href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="socials">
+      <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
+      <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Telegram-канал</a></li>
+      <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
