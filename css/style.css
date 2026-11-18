@@ -41,7 +41,8 @@
   --radius:16px;
   --radius-lg:24px;
 
-  --ease:cubic-bezier(.22,.8,.2,1);
+  --ease:cubic-bezier(.23,1,.32,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
   color-scheme:dark;
 }
 
@@ -88,7 +89,7 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
   min-height:48px;padding:0 28px;border-radius:999px;
   background:var(--accent);color:var(--accent-ink);
   font-weight:600;letter-spacing:-.005em;line-height:1;
-  transition:transform .25s var(--ease),background-color .25s,border-color .25s,box-shadow .25s;
+  transition:transform .18s var(--ease),background-color .2s,border-color .2s,box-shadow .25s;
 }
 .btn:active{transform:scale(.97)}
 .btn--ghost{
@@ -111,6 +112,11 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
 @media (hover:hover){
   a.card:hover,button.card:hover{transform:translateY(-2px);border-color:var(--line-2)}
 }
+
+/* ===== Track covers: grayscale, color on hover / when playing ===== */
+.cover img{filter:grayscale(100%);transition:filter .5s var(--ease),transform .5s var(--ease)}
+.cover.is-active img,.cover.is-playing img,.cover:focus-visible img{filter:grayscale(0%)}
+@media (hover:hover){.cover:hover img{filter:grayscale(0%)}}
 
 /* ===== Bullets ===== */
 .checks{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
@@ -166,7 +172,7 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
   background:var(--bg-2);border-bottom:1px solid var(--line);
   box-shadow:0 30px 60px -20px rgba(0,0,0,.7);
   transform:translateY(-100%);visibility:hidden;
-  transition:transform .4s var(--ease),visibility .4s;
+  transition:transform .4s var(--ease-drawer),visibility .4s;
 }
 .menu-open .menu-overlay{opacity:1;visibility:visible}
 .menu-open .menu{transform:none;visibility:visible}
@@ -177,15 +183,10 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
   border-bottom:1px solid var(--line);color:var(--muted);
   transition:color .25s,transform .3s var(--ease);
 }
-.menu__link::before{
-  counter-increment:m;content:"0" counter(m);
-  font:500 .72rem/1 var(--font-mono);letter-spacing:.1em;color:var(--line-2);
-  transition:color .25s;
-}
-.menu__link:hover{color:var(--text);transform:translateX(6px)}
-.menu__link:hover::before{color:var(--accent)}
+.menu__link::before,.menu__link::after{content:"";width:0;height:2px;border-radius:2px;background:var(--accent);align-self:center;transition:width .35s var(--ease)}
+.menu__link:hover{color:var(--text)}
+.menu__link:hover::before,.menu__link:hover::after,.menu__link[aria-current="page"]::before,.menu__link[aria-current="page"]::after{width:22px}
 .menu__link[aria-current="page"]{color:var(--text)}
-.menu__link[aria-current="page"]::before{color:var(--accent)}
 
 /* ===== Fixed bottom audio player ===== */
 .player{
@@ -223,7 +224,23 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
 .player__seek::-webkit-slider-thumb{-webkit-appearance:none;width:4px;height:16px;margin-top:-6.5px;border-radius:2px;background:var(--accent);border:0}
 .player__seek::-moz-range-thumb{width:4px;height:16px;border:0;border-radius:2px;background:var(--accent)}
 
+/* ===== Shared page patterns ===== */
+.page-head{padding-block:48px 8px}
+.page-head p{max-width:34em;font-size:1.05rem}
+.page-head .container{animation:rise .6s var(--ease) both}
+.cta{text-align:center}
+.cta p,.contact p{max-width:30em;margin-inline:auto}
+.cta .btn,.contact .btn{margin:6px 4px}
+.tag{display:inline-block;margin-bottom:14px;padding:4px 10px;border:1px solid var(--line-2);border-radius:999px;font:.72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .reveal.is-in{opacity:1;transform:none}
+@media (min-width:768px){.page-head{padding-block:88px 16px}}
+
 /* ===== Footer ===== */
+.footer-nav,.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;margin:0 0 24px;padding:0;list-style:none}
+.footer-nav{padding-bottom:24px;border-bottom:1px solid var(--line)}
+.footer-nav a,.socials a{color:var(--text);font-size:.95rem}
 .site-footer{border-top:1px solid var(--line);padding-block:44px;font-size:.85rem;color:var(--muted);text-align:center}
 .site-footer p{margin:0 0 6px;font-size:inherit;line-height:1.7}
 .site-footer a{

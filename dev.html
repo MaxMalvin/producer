@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0b">
+<meta name="robots" content="noindex,nofollow">
+<title>Технические ссылки</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body{padding-top:0}
+.dev{max-width:560px;margin-inline:auto;padding:calc(28px + env(safe-area-inset-top)) var(--gutter) calc(40px + env(safe-area-inset-bottom))}
+.dev h1{font-size:1.6rem;letter-spacing:-.02em;margin-bottom:.2em}
+.dev__info{display:block;margin-bottom:24px;font:.78rem/1.5 var(--font-mono);color:var(--muted)}
+.dev__group{margin:28px 0 10px;font:500 .72rem/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.dev__list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dev__link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:10px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);transition:border-color .2s,transform .2s var(--ease)}
+.dev__link:active{transform:scale(.98);border-color:var(--accent)}
+.dev__name{font-weight:600}
+.dev__file{font:.75rem var(--font-mono);color:var(--muted)}
+.dev__tag{margin-left:8px;padding:2px 8px;border:1px solid var(--line-2);border-radius:999px;font:.65rem var(--font-mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<main class="dev">
+  <span class="eyebrow">Только для меня</span>
+  <h1>Страницы сайта</h1>
+  <span class="dev__info" id="info">Экран: считаю…</span>
+
+  <p class="dev__group">Основные</p>
+  <ul class="dev__list">
+    <li><a class="dev__link" href="index.html"><span class="dev__name">Главная</span><span class="dev__file">index.html</span></a></li>
+    <li><a class="dev__link" href="about.html"><span class="dev__name">Обо мне</span><span class="dev__file">about.html</span></a></li>
+    <li><a class="dev__link" href="portfolio.html"><span class="dev__name">Портфолио</span><span class="dev__file">portfolio.html</span></a></li>
+    <li><a class="dev__link" href="portfolio-video-photo.html"><span class="dev__name">Фото и видео портфолио</span><span class="dev__file">portfolio-video-photo.html</span></a></li>
+    <li><a class="dev__link" href="services.html"><span class="dev__name">Услуги</span><span class="dev__file">services.html</span></a></li>
+    <li><a class="dev__link" href="education.html"><span class="dev__name">Обучение и тренинги</span><span class="dev__file">education.html</span></a></li>
+    <li><a class="dev__link" href="materials.html"><span class="dev__name">Материалы</span><span class="dev__file">materials.html</span></a></li>
+    <li><a class="dev__link" href="artist.html"><span class="dev__name">Артист</span><span class="dev__file">artist.html</span></a></li>
+  </ul>
+
+  <p class="dev__group">Отдельные</p>
+  <ul class="dev__list">
+    <li><a class="dev__link" href="price.html"><span class="dev__name">Цены</span><span class="dev__file">price.html</span></a></li>
+    <li><a class="dev__link" href="links.html"><span class="dev__name">Для Instagram</span><span class="dev__file">links.html</span></a></li>
+  </ul>
+
+  <p class="dev__group">Якоря на главной</p>
+  <ul class="dev__list">
+    <li><a class="dev__link" href="index.html#works"><span class="dev__name">Мои работы</span><span class="dev__file">#works</span></a></li>
+    <li><a class="dev__link" href="index.html#services"><span class="dev__name">Услуги</span><span class="dev__file">#services</span></a></li>
+    <li><a class="dev__link" href="index.html#consult"><span class="dev__name">Консультация</span><span class="dev__file">#consult</span></a></li>
+    <li><a class="dev__link" href="index.html#contact"><span class="dev__name">Контакты</span><span class="dev__file">#contact</span></a></li>
+  </ul>
+</main>
+
+<script>
+(() => {
+  const el = document.getElementById('info');
+  const show = () => {
+    el.textContent = 'Экран: ' + innerWidth + ' × ' + innerHeight + ' px · плотность ×' + (devicePixelRatio || 1);
+  };
+  show();
+  addEventListener('resize', show);
+})();
+</script>
+</body>
+</html>

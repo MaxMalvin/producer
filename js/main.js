@@ -1,17 +1,40 @@
 (() => {
   const NAV = [
     ['index.html', 'Главная'],
-    ['about.html', 'Обо мне'],
     ['portfolio.html', 'Портфолио'],
     ['services.html', 'Услуги'],
-    ['education.html', 'Обучение'],
-    ['materials.html', 'Материалы'],
-    ['artist.html', 'Артист'],
-    ['price.html', 'Цены'],
-    ['links.html', 'Links'],
+    ['about.html', 'Обо мне'],
   ];
   const page = location.pathname.split('/').pop() || 'index.html';
   const cur = (h) => (h === page ? ' aria-current="page"' : '');
+
+  // Общий футер: одно место для всех страниц
+  const footer = document.querySelector('.site-footer .container');
+  if (footer) {
+    footer.innerHTML = `
+    <ul class="footer-nav">
+      <li><a href="education.html">Обучение</a></li>
+      <li><a href="materials.html">Материалы</a></li>
+      <li><a href="artist.html">Artist</a></li>
+      <li><a href="portfolio-video-photo.html">Фото и видео портфолио</a></li>
+    </ul>
+    <ul class="socials">
+      <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
+      <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Telegram-канал</a></li>
+      <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>`;
+  }
+
+  // Мягкое появление секций при прокрутке (один раз)
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    }), { threshold: 0.06 });
+    document.querySelectorAll('main .section').forEach((s) => { s.classList.add('reveal'); io.observe(s); });
+  }
 
   const closeIcon = '<span></span><span></span><span></span>';
 

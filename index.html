@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0b0d">
 <title>MAX MALVIN — музыкальный продюсер, звукорежиссёр, музыкант</title>
-<meta name="description" content="Продюсирование, аранжировка, сведение и мастеринг песен на заказ. Макс Малвин — музыкальный продюсер и звукорежиссёр.">
+<meta name="description" content="Макс Малвин — музыкальный продюсер. Помогаю артистам создавать песни: продюсирование, аранжировка, сведение, мастеринг, запись.">
 <link rel="preload" href="assets/fonts/MedeoSansVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <style>
 .hero{padding-block:0 48px;overflow:hidden}
 .hero__grid{display:grid;gap:0}
 .hero__photo{order:-1;aspect-ratio:1/1.02;object-fit:cover;object-position:50% 18%;max-width:none;width:calc(100% + var(--gutter)*2);margin-inline:calc(var(--gutter)*-1);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
-.hero__text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;margin-top:-72px;animation:rise .9s var(--ease) both}
+.hero__text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;margin-top:-72px;animation:rise .7s var(--ease) both}
 .hero h1{font-size:clamp(3.2rem,15vw,6.75rem);line-height:.95;letter-spacing:-.05em;margin-bottom:.2em}
 .hero__roles{font:500 .72rem/1.6 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
 .actions{order:3;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
@@ -30,11 +30,27 @@
 .svc .checks li{color:var(--text);font-size:1.02rem}
 .svc .extra .checks li{color:var(--muted)}
 #works{scroll-margin-top:var(--header-h)}
+.works__head{max-width:40em;margin-bottom:32px}
+.works__head h2{margin-bottom:.4em}
+.works__head p{margin:0;font-size:1.05rem}
+.works__more{text-align:center;margin:36px 0 0}
+.svc__list{list-style:none;margin:0;padding:0}
+.svc__item{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}
+.svc__item:last-child{border-bottom:0;padding-bottom:0}
+.svc__item strong{font-size:1.1rem;font-weight:600;letter-spacing:-.01em}
+.svc__item span{color:var(--muted);font-size:.95rem}
+.svc__item--main{padding:20px;margin-bottom:8px;border:1px solid rgba(226,171,82,.45);border-radius:var(--radius);background:var(--accent-soft)}
+.svc__item--main strong{color:var(--accent);font-size:1.3rem}
+.svc__item--main span{color:var(--text)}
+.about-mini{display:grid;gap:20px}
+.about-mini h2{margin:0}
+.about-mini p{margin:0 0 16px;font-size:1.15rem;line-height:1.6;color:var(--text)}
+.about-mini p:last-child{margin:0;color:var(--muted)}
 .extra{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .extra .eyebrow{margin-bottom:12px}
 .covers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:560px;margin-inline:auto}
 .cover{position:relative;display:block;aspect-ratio:1;padding:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--bg-3)}
-.cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+.cover img{width:100%;height:100%;object-fit:cover}
 .cover:hover img{transform:scale(1.05)}
 .cover::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/40px no-repeat}
 .cover.is-playing::after{background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/36px no-repeat}
@@ -48,11 +64,8 @@
 @media(hover:hover){.cover:hover::after{transform:scale(1.06);border-color:var(--accent);background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317120a'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/16px no-repeat}.cover.is-playing:hover::after{background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317120a'%3E%3Cpath d='M6 4h4v16H6zm8 0h4v16h-4z'/%3E%3C/svg%3E") center/16px no-repeat}}
 .contact{text-align:center}
 .contact p{max-width:30em;margin-inline:auto}
-.contact .btn{margin-top:8px}
+.contact .btn{margin:8px 4px 0}
 .contact__mail{display:block;margin-top:18px;color:var(--muted)}
-.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:0 0 24px;padding:0;list-style:none}
-.socials a{color:var(--text);border-bottom:1px solid var(--line)}
-.socials a:hover{border-color:var(--text)}
 @media(min-width:768px){
   .hero{padding-block:72px 112px}
   .hero__grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
@@ -63,6 +76,7 @@
   .actions .btn{padding-inline:28px}
   .covers{grid-template-columns:repeat(4,1fr);gap:16px;max-width:none}
   .svc{grid-template-columns:.9fr 1.1fr;gap:64px;padding:52px}
+  .about-mini{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
 }
 </style>
 </head>
@@ -75,8 +89,7 @@
       <div class="hero__text">
         <span class="eyebrow">Музыкальный продюсер</span>
         <h1>MAX<br>MALVIN</h1>
-        <p class="hero__roles">Продюсер · Звукорежиссёр · Музыкант</p>
-        <p class="hero__lead">Делаю песни на заказ: от идеи до финального результата. Пишу аранжировки, свожу и мастерю. Знаю музыкальную индустрию с разных сторон: в студии и на сцене.</p>
+        <p class="hero__lead">Помогаю артистам создавать песни — от первой идеи до готового профессионального звучания.</p>
         <div class="actions">
           <a class="btn" href="about.html">Обо мне</a>
           <a class="btn btn--ghost" href="#works">Слушать работы</a>
@@ -89,9 +102,9 @@
   <!-- Работы -->
   <section class="section" id="works">
     <div class="container">
-      <div class="head-row">
-        <h2>Мои работы</h2>
-        <a class="more" href="portfolio.html">Всё портфолио →</a>
+      <div class="works__head">
+        <h2>Избранные работы</h2>
+        <p>Несколько проектов, над которыми я работал. Послушайте результат и посмотрите, какую роль я выполнял в каждом из них.</p>
       </div>
       <div class="covers">
         <button class="cover" type="button" data-track data-src="assets/portfolio/Armen - Butterflies.mp3" data-title="Butterflies" data-artist="Armen" data-cover="assets/portfolio/armen-butterflies.webp" aria-label="Слушать: Armen — Butterflies"><img src="assets/portfolio/armen-butterflies.webp" alt="" loading="lazy"></button>
@@ -99,6 +112,7 @@
         <button class="cover" type="button" data-track data-src="assets/portfolio/Вера Шимко - За миражами.mp3" data-title="За миражами" data-artist="Вера Шимко" data-cover="assets/portfolio/vera-simko-za-mirazami.webp" aria-label="Слушать: Вера Шимко — За миражами"><img src="assets/portfolio/vera-simko-za-mirazami.webp" alt="" loading="lazy"></button>
         <button class="cover" type="button" data-track data-src="assets/portfolio/Саша Козлова - Линиями.mp3" data-title="Линиями" data-artist="Саша Козлова" data-cover="assets/portfolio/sasa-kozlova-liniami.webp" aria-label="Слушать: Саша Козлова — Линиями"><img src="assets/portfolio/sasa-kozlova-liniami.webp" alt="" loading="lazy"></button>
       </div>
+      <p class="works__more"><a class="btn btn--ghost" href="portfolio.html">Все работы</a></p>
     </div>
   </section>
 
@@ -107,25 +121,18 @@
     <div class="container">
       <div class="card svc">
         <div class="svc__head">
-          <h2>Услуги</h2>
-          <p class="svc__lead">Продюсирование песни от идеи до финального результата.</p>
+          <h2>Работа над вашей музыкой</h2>
+          <p class="svc__lead">В зависимости от задачи я могу подключиться к отдельному этапу или взять на себя продюсирование песни целиком.</p>
           <a class="more" href="services.html">Подробнее →</a>
         </div>
         <div class="svc__body">
-        <ul class="checks">
-          <li>Аранжировка: партии инструментов, саунд-дизайн, структура песни</li>
-          <li>Сведение и мастеринг</li>
-          <li>Запись голоса на студии</li>
-          <li>Запись и сведение живых концертов</li>
-        </ul>
-        <div class="extra">
-          <span class="eyebrow">Дополнительно</span>
-          <ul class="checks" style="margin-top:0">
-            <li>Съёмка музыкальных видео</li>
-            <li>Видеопродакшен</li>
-            <li>Фотосъёмка</li>
+          <ul class="svc__list">
+            <li class="svc__item svc__item--main"><strong>Продюсирование</strong><span>Работа над песней на всех этапах</span></li>
+            <li class="svc__item"><strong>Аранжировка</strong><span>Создание музыкальной основы и звучания</span></li>
+            <li class="svc__item"><strong>Сведение</strong><span>Работа над балансом и характером микса</span></li>
+            <li class="svc__item"><strong>Мастеринг</strong><span>Финальная подготовка трека</span></li>
+            <li class="svc__item"><strong>Запись</strong><span>Организация записи вокала и инструментов</span></li>
           </ul>
-        </div>
         </div>
       </div>
     </div>
@@ -148,20 +155,37 @@
     </div>
   </section>
 
+  <!-- Обо мне -->
+  <section class="section" id="about">
+    <div class="container about-mini">
+      <h2>Обо мне</h2>
+      <div>
+        <p>Музыка — моя профессия и основное направление работы.</p>
+        <p>У меня высшее музыкальное образование и 15 лет опыта работы в музыкальной индустрии.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Контакты -->
   <section class="section contact" id="contact">
     <div class="container">
       <span class="eyebrow">Контакты</span>
       <h2>Обсудим вашу песню?</h2>
-      <p>Напишите в Telegram: расскажу, как проходит работа, и подскажу по срокам и стоимости.</p>
+      <p>Расскажите о своей идее или проекте. Обсудим задачу, возможные варианты работы, сроки и стоимость.</p>
       <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="contact__mail" href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a>
+      <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
+    <ul class="footer-nav">
+      <li><a href="education.html">Обучение</a></li>
+      <li><a href="materials.html">Материалы</a></li>
+      <li><a href="artist.html">Artist</a></li>
+      <li><a href="portfolio-video-photo.html">Фото и видео портфолио</a></li>
+    </ul>
     <ul class="socials">
       <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
       <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Telegram-канал</a></li>
