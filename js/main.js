@@ -6,7 +6,9 @@
     ['about.html', 'Обо мне'],
   ];
   const page = location.pathname.split('/').pop() || 'index.html';
-  const cur = (h) => (h === page ? ' aria-current="page"' : '');
+  // страницы историй треков (track-*.html) относятся к разделу «Портфолио»
+  const section = page.startsWith('track-') ? 'portfolio.html' : page;
+  const cur = (h) => (h === section ? ' aria-current="page"' : '');
 
   // Общий футер: одно место для всех страниц
   const footer = document.querySelector('.site-footer .container');
@@ -44,11 +46,17 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="logo" href="index.html">MAX MALVIN</a>
+    <nav class="nav" aria-label="Основное меню">
+      <ul class="nav__list">
+        ${NAV.map(([h, t]) => `<li><a class="nav__link" href="${h}"${cur(h)}>${t}</a></li>`).join('')}
+      </ul>
+      <a class="btn nav__cta" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать</a>
+    </nav>
     <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu">${closeIcon}</button>
   </div>
 </header>
 <div class="menu-overlay" data-menu-close></div>
-<nav class="menu" id="menu" aria-label="Основное меню" aria-hidden="true">
+<nav class="menu" id="menu" aria-label="Меню" aria-hidden="true">
   <ul class="menu__list">
     ${NAV.map(([h, t]) => `<li><a class="menu__link" href="${h}"${cur(h)}>${t}</a></li>`).join('')}
   </ul>
@@ -74,7 +82,8 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && body.classList.contains('menu-open')) { setMenu(false); burger.focus(); }
   });
-  matchMedia('(min-width:1px)').addEventListener?.('change', () => {});
+  // при переходе на широкий экран закрываем мобильное меню
+  matchMedia('(min-width:768px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
   // Нижний аудиоплеер: один на все треки. API: window.MMPlayer.play({src,title,artist,cover})
   const fmt = (s) => (isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '0:00');
