@@ -281,15 +281,16 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
 .page-head p{max-width:34em;font-size:1.05rem}
 .page-head .container{animation:rise .6s var(--ease) both}
 /* ===== CTA block: one layout for every page ===== */
-.cta{padding-block:56px 64px}
-.cta .container{max-width:var(--max)}
-.cta .eyebrow{margin-bottom:16px}
-.cta h2{margin:0 0 14px}
-.cta p{max-width:32em;margin:0 0 28px}
-.cta__actions{display:flex;flex-wrap:wrap;gap:12px}
+.cta{padding-block:44px 56px}
+.cta__box{text-align:center}
+.cta__head{margin-bottom:16px}
+.cta .eyebrow{display:flex;justify-content:center;margin:0 0 18px}
+.cta h2{margin:0;text-wrap:balance}
+.cta p{max-width:27em;margin:0 auto 30px;text-wrap:balance}
+.cta__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .cta__actions .btn{flex:0 0 auto}
-@media(max-width:520px){.cta__actions{flex-direction:column;align-items:flex-start}.cta__actions .btn{width:100%;max-width:340px}}
-@media(min-width:768px){.cta{padding-block:88px 100px}}
+@media(max-width:520px){.cta__actions{flex-direction:column;align-items:center}.cta__actions .btn{width:100%;max-width:340px}}
+@media(min-width:768px){.cta{padding-block:70px 96px}}
 .tag{display:inline-block;margin-bottom:14px;padding:4px 10px;border:1px solid var(--line-2);border-radius:999px;font:.72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
 .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
