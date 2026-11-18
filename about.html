@@ -27,18 +27,25 @@
 .avatar{width:min(62vw,236px);aspect-ratio:1;margin:0 auto 44px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:0;box-shadow:0 0 0 1px var(--line-2),0 0 0 9px var(--bg),0 0 0 10px rgba(255,255,255,.55),0 40px 90px -30px rgba(255,255,255,.22)}
 .about h1{font-size:clamp(2.6rem,12vw,4.75rem);line-height:1;margin-bottom:.3em}
 .about__roles{font:500 .72rem/1.6 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
-.about__lead{max-width:32em;margin:40px auto 0;font-size:1.1rem;line-height:1.7;color:#d8d6d0}
+.about__lead{max-width:32em;margin:40px auto 0;font-size:1.1rem;line-height:1.7;color:#d8d6d0;font-style:italic}
 .about__lead::before{content:"\201C";display:block;height:.5em;margin-bottom:.3em;font:700 5rem/1 Georgia,serif;color:var(--accent);opacity:.85}
-.facts{display:grid;gap:16px}
-.fact h3{margin-bottom:.5em}
-.fact p{margin:0}
+.about-rows{padding-top:8px}
+.about-rows p{margin:0 0 1em;font-size:1.05rem;line-height:1.7;color:#d8d6d0;max-width:34em}
+.about-rows p:last-child{margin-bottom:0}
+.about-rows .sec-title{margin-bottom:0}
+.about-rows .row{margin-top:56px}
+.about-rows .split:first-child{margin-top:0}
+.facts{display:grid;gap:16px;margin-top:28px}
+.fact h3{margin-bottom:.4em;font-size:1.25rem}
+.fact p{margin:0;color:var(--muted)}
 .cta{text-align:center}
 .cta p{max-width:30em;margin-inline:auto}
 .cta .btn{margin:6px 4px}
 @media(min-width:768px){
   .about{padding-block:88px 48px}
   .avatar{width:280px;margin-bottom:52px}
-  .facts{grid-template-columns:repeat(3,1fr);gap:20px}
+  .facts{grid-template-columns:repeat(2,1fr);gap:20px}
+  .about-rows .row{margin-top:72px}
 }
 </style>
 </head>
@@ -49,25 +56,50 @@
     <div class="container">
       <img class="avatar" src="assets/img/about.webp" alt="Макс Малвин" width="440" height="440" fetchpriority="high">
       <span class="eyebrow">Обо мне</span>
-      <h1>MAX MALVIN</h1>
+      <h1 class="grad-white">MAX MALVIN</h1>
       <p class="about__roles">Продюсер · Звукорежиссёр · Музыкант</p>
       <p class="about__lead">Я люблю свою работу и вовлекаюсь в проект артиста и в сам процесс. Для меня важен результат: финальное звучание, в котором артист слышит свою музыкальную концепцию.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section about-rows">
     <div class="container">
-      <div class="facts">
-        <article class="card fact"><h3>15 лет в музыкальной индустрии</h3><p>За это время побывал в разных ролях: артист на сцене, музыкант, звукорежиссёр на площадке. Знаю индустрию с разных сторон.</p></article>
-        <article class="card fact"><h3>Высшее музыкальное образование</h3><p>Образование по музыке, которое я применяю в аранжировке, записи и сведении.</p></article>
-        <article class="card fact"><h3>Музыка и видео</h3><p>Звукорежиссёр, музыкант, гитарист, оператор, монтажёр и колорист. Беру на себя и музыкальные, и визуальные задачи: от песни до клипа.</p></article>
+      <div class="split">
+        <h2 class="sec-title sec-title--sm">Кто я.</h2>
+        <div>
+          <p>Я Макс Малвин. Занимаюсь музыкальным продюсированием, аранжировкой и звукорежиссурой.</p>
+          <p>Мой профессиональный путь связан с музыкой с разных сторон: я выступал как музыкант и артист, работал на сцене и занимался звукорежиссурой. Этот опыт помогает мне смотреть на создание песни не только с технической, но и с музыкальной стороны.</p>
+        </div>
+      </div>
+
+      <div class="split row">
+        <h2 class="sec-title sec-title--sm">Чем я занимаюсь.</h2>
+        <p>Сегодня моё основное направление — работа с артистами. Я помогаю развивать идеи, формировать индивидуальное звучание, работать над аранжировкой и доводить песни до результата.</p>
+      </div>
+
+      <div class="row">
+        <h2 class="sec-title sec-title--sm">Опыт и образование.</h2>
+        <div class="facts">
+          <article class="card fact"><h3>15 лет</h3><p>в музыкальной индустрии</p></article>
+          <article class="card fact"><h3>Высшее образование</h3><p>музыкальное</p></article>
+          <article class="card fact"><h3>Студия и сцена</h3><p>опыт работы в записи и на концертах</p></article>
+          <article class="card fact"><h3>Продюсирование, звукорежиссура, исполнительство</h3><p>практический опыт</p></article>
+        </div>
+      </div>
+
+      <div class="split row">
+        <h2 class="sec-title sec-title--sm">Мой подход.</h2>
+        <div>
+          <p>Для меня важно не просто выполнить техническую задачу, а понять замысел артиста и найти решение, которое будет работать на саму музыку.</p>
+          <p>Каждый проект начинается с понимания музыки и задачи артиста. Я стараюсь выстроить работу так, чтобы творческий процесс оставался понятным, а все этапы — последовательными и согласованными.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section cta">
     <div class="container">
-      <h2>Обсудим ваш проект?</h2>
+      <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Расскажите, что за песня, кто исполнитель и на каком этапе работа. Я отвечу и предложу формат сотрудничества.</p>
       <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
       <a class="btn btn--ghost" href="portfolio.html">Слушать работы</a>

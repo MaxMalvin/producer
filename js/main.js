@@ -60,6 +60,14 @@
   <ul class="menu__list">
     ${NAV.map(([h, t]) => `<li><a class="menu__link" href="${h}"${cur(h)}>${t}</a></li>`).join('')}
   </ul>
+  <div class="menu__foot">
+    <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+    <ul class="menu__social">
+      <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Канал</a></li>
+    </ul>
+  </div>
 </nav>`);
   }
 

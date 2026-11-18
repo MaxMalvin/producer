@@ -21,128 +21,67 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
 <style>
-.page-head{padding-block:40px 8px}
-.page-head p{max-width:34em;font-size:1.05rem}
-.svc-list{display:grid;gap:16px}
-.svc{padding:26px}
-.svc--main{border-color:rgba(226,171,82,.45);background:var(--accent-soft)}
-.svc__tag{display:inline-block;margin-bottom:14px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font:.72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.svc h3{font-size:1.4rem}
-.svc p{margin:0}
-.svc .btn{margin-top:20px}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:s}
-.steps li{counter-increment:s;position:relative;padding:22px 22px 22px 72px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius)}
-.steps li::before{content:"0" counter(s);position:absolute;left:22px;top:22px;font:500 1.1rem/1 var(--font-pixel);color:var(--muted)}
-.steps h3{margin-bottom:.3em}
-.steps p{margin:0}
+.svc-page{padding-block:40px 24px}
+.svc-page .lead-big{margin-top:6px}
+.sv{padding-block:0}
 .cta{text-align:center}
 .cta p{max-width:30em;margin-inline:auto}
-@media(min-width:768px){
-  .page-head{padding-block:72px 16px}
-  .svc-list{grid-template-columns:repeat(2,1fr);gap:20px}
-  .svc--main{grid-column:1/-1}
-  .steps{grid-template-columns:repeat(2,1fr);gap:20px}
-}
+.cta .btn{margin:6px 4px}
+@media(min-width:768px){.svc-page{padding-block:72px 40px}}
 </style>
 </head>
 <body>
 
 <main>
-  <section class="page-head">
-    <div class="container">
-      <span class="eyebrow">Услуги</span>
-      <h1>Работа над вашей музыкой</h1>
-      <p>В зависимости от задачи я могу подключиться к отдельному этапу или взять на себя продюсирование песни целиком.</p>
+  <section class="svc-page">
+    <div class="container split">
+      <div>
+        <h1 class="sec-title">Услуги.</h1>
+        <p class="lead-big">В зависимости от задачи я могу подключиться к отдельному <em>этапу</em> или взять на себя продюсирование <em>песни целиком</em>.</p>
+      </div>
+      <div class="prod">
+        <div class="prod__head">
+          <strong>Продюсирование</strong>
+          <span>Веду песню от идеи до финального результата: аранжировка, запись, сведение и мастеринг — в одних руках. Работа над звучанием и подачей под ваш замысел, сопровождение на всех этапах до релиза.</span>
+        </div>
+        <ol class="prod__stages">
+          <li><span class="prod__n">01</span><strong>Аранжировка</strong><span>Партии инструментов, саунд-дизайн, структура песни</span></li>
+          <li><span class="prod__n">02</span><strong>Запись</strong><span>Организую запись голоса на студии: одного исполнителя, коллектива или группы</span></li>
+          <li><span class="prod__n">03</span><strong>Сведение</strong><span>Баланс и чистота звука, плотность и объём микса, подготовка к мастерингу</span></li>
+          <li><span class="prod__n">04</span><strong>Мастеринг</strong><span>Финальная обработка трека, громкость и звучание для всех площадок</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="svc-list">
-        <article class="card svc svc--main">
-          <span class="svc__tag">Основная услуга</span>
-          <h3>Продюсирование песни</h3>
-          <p>Веду песню от идеи до финального результата.</p>
-          <ul class="checks">
-            <li>Аранжировка, запись, сведение и мастеринг в одних руках</li>
-            <li>Работа над звучанием и подачей под ваш замысел</li>
-            <li>Сопровождение на всех этапах до релиза</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <h3>Аранжировка</h3>
-          <ul class="checks">
-            <li>Партии инструментов</li>
-            <li>Саунд-дизайн</li>
-            <li>Структура песни</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <h3>Сведение</h3>
-          <ul class="checks">
-            <li>Баланс и чистота звука</li>
-            <li>Плотность и объём микса</li>
-            <li>Подготовка к мастерингу</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <h3>Мастеринг</h3>
-          <ul class="checks">
-            <li>Финальная обработка трека</li>
-            <li>Громкость и звучание для всех площадок</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <h3>Запись голоса на студии</h3>
-          <ul class="checks">
-            <li>Организую запись одного исполнителя</li>
-            <li>Запись коллектива или группы</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <h3>Запись и сведение живых концертов</h3>
-          <ul class="checks">
-            <li>Запись выступления</li>
-            <li>Сведение живого звука</li>
-          </ul>
-        </article>
-
-        <article class="card svc">
-          <span class="svc__tag">Дополнительно</span>
-          <h3>Видео и фото</h3>
-          <ul class="checks">
-            <li>Съёмка музыкальных видео</li>
-            <li>Видеопродакшен</li>
-            <li>Фотосъёмка</li>
-          </ul>
-          <a class="btn" href="portfolio-video-photo.html">Примеры работ</a>
-        </article>
+      <div class="split">
+        <h2 class="sec-title sec-title--sm">Дополнительно.</h2>
+        <ol class="prod__stages prod__stages--plain" style="margin-top:0">
+          <li><strong>Запись и сведение живых концертов</strong><span>Запись выступления и сведение живого звука</span></li>
+          <li><strong>Видео и фото</strong><span>Съёмка музыкальных видео, видеопродакшен, фотосъёмка. <a href="portfolio-video-photo.html">Примеры работ&nbsp;<span class="arr">→</span></a></span></li>
+        </ol>
       </div>
-    </div>
-  </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="container">
-      <span class="eyebrow">Модель взаимодействия</span>
-      <h2>Как я работаю</h2>
-      <p>Путь от идеи до готовой песни.</p>
-      <ol class="steps">
-        <li><h3>Знакомство и идея</h3><p>Обсуждаем вашу песню, референсы и задачу: что должно получиться в итоге.</p></li>
-        <li><h3>Аранжировка</h3><p>Создаю основу звучания и структуру песни под ваш замысел.</p></li>
-        <li><h3>Запись</h3><p>При необходимости организую запись голоса или инструментов на студии.</p></li>
-        <li><h3>Сведение и мастеринг</h3><p>Собираю дорожки в цельное звучание и довожу трек до релиза.</p></li>
-      </ol>
+      <div class="split">
+        <div>
+          <h2 class="sec-title sec-title--sm">Как я работаю.</h2>
+          <p class="lead-big">Путь от идеи до готовой песни.</p>
+        </div>
+        <ol class="prod__stages" style="margin-top:0">
+          <li><span class="prod__n">01</span><strong>Знакомство и идея</strong><span>Обсуждаем вашу песню, референсы и задачу: что должно получиться в итоге</span></li>
+          <li><span class="prod__n">02</span><strong>Аранжировка</strong><span>Создаю основу звучания и структуру песни под ваш замысел</span></li>
+          <li><span class="prod__n">03</span><strong>Запись</strong><span>При необходимости организую запись голоса или инструментов на студии</span></li>
+          <li><span class="prod__n">04</span><strong>Сведение и мастеринг</strong><span>Собираю дорожки в цельное звучание и довожу трек до релиза</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <section class="section cta">
     <div class="container">
-      <h2>Обсудим ваш проект?</h2>
+      <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Напишите, на каком этапе ваша песня и что вы хотите получить. Я подскажу, с чего лучше начать, и назову сроки и стоимость.</p>
       <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
       <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>

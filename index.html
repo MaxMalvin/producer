@@ -32,33 +32,23 @@
 .hero h1{font-size:clamp(3.2rem,15vw,6.75rem);line-height:.95;letter-spacing:-.05em;margin-bottom:.2em}
 .actions{order:3;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .actions .btn{padding-inline:16px;white-space:nowrap}
-.hero__lead{order:4;font-size:1.05rem;max-width:32em;margin:26px 0 0}
+.hero__lead{order:4;max-width:30em;margin:26px 0 0;font-size:1.08rem;line-height:1.65;color:#bfbdb6}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}}
-/* Заголовки блоков главной: крупно, заглавными, акцентным цветом */
-.sec-title{font-size:clamp(2rem,8.6vw,3.9rem);font-weight:800;line-height:1;letter-spacing:-.01em;text-transform:uppercase;color:var(--accent);margin:0 0 .45em}
-.lead-big{font-size:clamp(1rem,3.9vw,1.15rem);line-height:1.55;color:var(--muted);margin:0;padding-left:16px;border-left:1px solid var(--line-2);max-width:30em}
-.lead-big em{font-style:normal;color:var(--accent);font-weight:600}
 .svc{display:grid;gap:36px}
 #works{scroll-margin-top:var(--header-h)}
 #contact{scroll-margin-top:var(--header-h)}
 .works__head{max-width:40em;margin-bottom:32px}
 .works__head h2{margin-bottom:.4em}
 .works__head{max-width:46em}
-.works__more{text-align:center;margin:36px 0 0}
-/* Продюсирование: одна линия слева связывает его с этапами, без вложенных карточек */
-.prod{padding-left:20px;border-left:2px solid rgba(226,171,82,.55)}
-.prod__head{display:grid;gap:4px}
-.prod__head strong{color:var(--accent);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;line-height:1.1}
-.prod__head span{color:var(--text);font-size:.98rem}
-.prod__stages{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
-.prod__stages li{display:grid;grid-template-columns:2.4rem 1fr;row-gap:2px;padding:16px 0;border-bottom:1px solid var(--line)}
-.prod__stages li:last-child{border-bottom:0;padding-bottom:0}
-.prod__n{grid-row:1/3;padding-top:.4em;font:500 .72rem/1 var(--font-mono);letter-spacing:.14em;color:var(--accent)}
-.prod__stages strong{font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
-.prod__stages li>span:last-child{color:var(--muted);font-size:.92rem;line-height:1.5}
-.svc__more{margin:32px 0 0}
+.works__head .sec-title{margin-bottom:.1em}
+.works__head .sec-note{margin:0 0 28px}
+.works__more{text-align:right;margin:28px 0 0}
+.svc__more{margin:32px 0 0;text-align:right}
+/* У каждого слова имени свой градиент: светлый до середины, затем затемнение к низу */
+.hero h1.grad-white{background:none;padding-bottom:0}
+.hero h1 .w{display:block;padding-bottom:.03em;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-image:linear-gradient(180deg,#f5f3ee 0%,#f0eee8 50%,#8d8b86 100%)}
 .about-mini{text-align:center}
-.about-mini .quote{max-width:30em;margin:0 auto;font-size:clamp(1rem,3.9vw,1.15rem);line-height:1.6;color:#d8d6d0}
+.about-mini .quote{max-width:30em;margin:0 auto;font-size:clamp(1rem,3.9vw,1.15rem);line-height:1.6;color:#d8d6d0;font-style:italic}
 .about-mini .quote::before{content:"\201C";display:block;height:.45em;margin-bottom:.25em;font:700 4.5rem/1 Georgia,serif;color:#fff;opacity:.85}
 .about-mini .avatar{width:min(58vw,220px);aspect-ratio:1;margin:44px auto 36px;display:block;border-radius:50%;object-fit:cover;object-position:50% 25%;box-shadow:0 0 0 1px var(--line-2),0 0 0 9px var(--bg),0 0 0 10px rgba(255,255,255,.55),0 40px 90px -30px rgba(255,255,255,.22)}
 .about-mini .more{margin:0}
@@ -89,7 +79,7 @@
     <div class="container hero__grid">
       <div class="hero__text">
         <span class="eyebrow">Музыкальный продюсер</span>
-        <h1 aria-label="MAX MALVIN">MAX<br>MALVIN</h1>
+        <h1 class="grad-white" aria-label="MAX MALVIN"><span class="w">MAX</span><span class="w">MALVIN</span></h1>
         <p class="hero__lead">Я помогаю артистам реализовать их песню от идеи до финального профессионального звучания.</p>
         <div class="actions">
           <a class="btn" href="#contact">Обсудить проект</a>
@@ -104,16 +94,17 @@
   <section class="section" id="works">
     <div class="container">
       <div class="works__head">
-        <h2 class="sec-title">Примеры работ</h2>
+        <h2 class="sec-title">Примеры работ.</h2>
+        <p class="sec-note">Недавние проекты</p>
         <p class="lead-big">Проекты, над которыми я работал. Послушайте <em>результат</em> и посмотрите, какую <em>роль</em> я выполнял в каждом из них.</p>
       </div>
       <div class="covers">
-        <button class="cover" type="button" data-track data-src="assets/portfolio-audio/armen-butterflies.mp3" data-title="Butterflies" data-artist="Armen" data-cover="assets/portfolio-audio/armen-butterflies.webp" aria-label="Слушать: Armen — Butterflies"><img src="assets/portfolio-audio/armen-butterflies.webp" alt="" loading="lazy"></button>
-        <button class="cover" type="button" data-track data-src="assets/portfolio-audio/armen-since-you-have-disappeared.mp3" data-title="Since you have disappeared" data-artist="Armen" data-cover="assets/portfolio-audio/armen-since-you-have-disappeared.webp" aria-label="Слушать: Armen — Since you have disappeared"><img src="assets/portfolio-audio/armen-since-you-have-disappeared.webp" alt="" loading="lazy"></button>
+        <button class="cover" type="button" data-track data-src="assets/portfolio-audio/eduardo-ross-mi-amor.mp3" data-title="Mi Amor" data-artist="Eduardo Ross" data-cover="assets/portfolio-audio/eduardo-ross-mi-amor.webp" aria-label="Слушать: Eduardo Ross — Mi Amor"><img src="assets/portfolio-audio/eduardo-ross-mi-amor.webp" alt="" loading="lazy"></button>
+        <button class="cover" type="button" data-track data-src="assets/portfolio-audio/armen-set-me-free.mp3" data-title="Set Me Free" data-artist="Armen" data-cover="assets/portfolio-audio/armen-set-me-free.webp" aria-label="Слушать: Armen — Set Me Free"><img src="assets/portfolio-audio/armen-set-me-free.webp" alt="" loading="lazy"></button>
         <button class="cover" type="button" data-track data-src="assets/portfolio-audio/vera-shimko-golos-moy.mp3" data-title="Голос мой" data-artist="Вера Шимко" data-cover="assets/portfolio-audio/vera-shimko-golos-moy.webp" aria-label="Слушать: Вера Шимко — Голос мой"><img src="assets/portfolio-audio/vera-shimko-golos-moy.webp" alt="" loading="lazy"></button>
         <button class="cover" type="button" data-track data-src="assets/portfolio-audio/sasha-kozlova-liniami.mp3" data-title="Линиями" data-artist="Саша Козлова" data-cover="assets/portfolio-audio/sasha-kozlova-liniami.webp" aria-label="Слушать: Саша Козлова — Линиями"><img src="assets/portfolio-audio/sasha-kozlova-liniami.webp" alt="" loading="lazy"></button>
       </div>
-      <p class="works__more"><a class="btn btn--ghost" href="portfolio.html">Все работы</a></p>
+      <p class="works__more"><a class="more" href="portfolio.html">Все работы&nbsp;<span class="arr">→</span></a></p>
     </div>
   </section>
 
@@ -121,7 +112,7 @@
   <section class="section" id="services">
     <div class="container svc">
         <div class="svc__head">
-          <h2 class="sec-title">Услуги</h2>
+          <h2 class="sec-title">Услуги.</h2>
           <p class="lead-big">В зависимости от задачи я могу подключиться к отдельному <em>этапу</em> или взять на себя продюсирование <em>песни целиком</em>.</p>
         </div>
         <div class="svc__body">
@@ -137,7 +128,7 @@
               <li><span class="prod__n">04</span><strong>Мастеринг</strong><span>Финальная подготовка трека</span></li>
             </ol>
           </div>
-          <p class="svc__more"><a class="more" href="services.html">Подробнее →</a></p>
+          <p class="svc__more"><a class="more" href="services.html">Подробнее&nbsp;<span class="arr">→</span></a></p>
         </div>
     </div>
   </section>
@@ -145,10 +136,10 @@
   <!-- Обо мне -->
   <section class="section" id="about">
     <div class="container about-mini">
-      <h2 class="sec-title">Обо мне</h2>
+      <h2 class="sec-title">Обо мне.</h2>
       <p class="quote">Музыка — моя страсть и любовь с самого детства.</p>
       <img class="avatar" src="assets/img/about.webp" alt="Макс Малвин" width="440" height="440" loading="lazy">
-      <a class="more" href="about.html">Подробнее →</a>
+      <a class="more" href="about.html">Подробнее&nbsp;<span class="arr">→</span></a>
     </div>
   </section>
 
@@ -156,7 +147,7 @@
   <section class="section contact" id="contact">
     <div class="container">
       <span class="eyebrow">Контакты</span>
-      <h2>Обсудим ваш проект?</h2>
+      <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Расскажите о своей идее или песне. Обсудим задачу, варианты работы, сроки и стоимость.</p>
       <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
       <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
