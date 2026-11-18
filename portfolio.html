@@ -15,8 +15,8 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Портфолио — MAX MALVIN">
 <meta property="og:description" content="Работы Макса Малвина: продюсирование, аранжировка и сведение песен. Послушайте примеры.">
-<meta property="og:url" content="https://your-domain.ru/portfolio.html">
-<meta property="og:image" content="https://your-domain.ru/assets/og/og-default.jpg">
+<meta property="og:url" content="https://maxmalvin.github.io/producer/portfolio.html">
+<meta property="og:image" content="https://maxmalvin.github.io/producer/assets/og/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,19 +25,20 @@
 <style>
 .page-head{padding-block:40px 8px}
 .page-head p{max-width:34em;font-size:1.05rem}
-.tracks{display:grid;gap:16px;grid-template-columns:1fr}
-.track{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:center;padding:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s}
-.track:has(.is-active){border-color:rgba(226,171,82,.6)}
-.track__cover{width:104px;border-radius:10px;--ico-size:14px}
-.track__cover::after{right:8px;bottom:8px;width:34px;height:34px}
-.track__title{margin:0 0 2px;font-size:1.15rem;line-height:1.25}
-.track__artist{margin:0 0 10px;color:var(--text);opacity:.85}
-.track__link{margin:14px 0 0;text-align:right}
+.tracks{display:grid;gap:28px 14px;grid-template-columns:repeat(2,1fr)}
+.track{display:block;min-width:0}
+.track__cover{width:100%;border-radius:12px;--ico-size:16px}
+.track__cover::after{right:10px;bottom:10px;width:38px;height:38px}
+.track__title{margin:14px 0 2px;font-size:1.02rem;line-height:1.25;letter-spacing:-.01em;text-wrap:pretty}
+.track__artist{margin:0;color:var(--accent);font-size:.92rem}
+.track__link{margin:10px 0 0}
+.track__link .more{padding:0;background:none;font:500 .7rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.track__link .more .arr{color:var(--accent);margin-left:2px}
+@media (hover:hover){.track__link .more:hover{color:var(--text);background:none}}
 @media(min-width:768px){
   .page-head{padding-block:72px 16px}
-  .tracks{grid-template-columns:repeat(2,1fr);gap:20px}
-  .track{grid-template-columns:132px 1fr;padding:16px}
-  .track__cover{width:132px}
+  .tracks{grid-template-columns:repeat(4,1fr);gap:40px 20px}
+  .track__title{font-size:1.08rem}
 }
 </style>
 </head>
@@ -47,8 +48,8 @@
   <section class="page-head">
     <div class="container">
       <span class="eyebrow">Портфолио</span>
-      <h1>Избранные работы</h1>
-      <p>Музыкальные проекты и моя роль в каждом из них. Нажмите на обложку, чтобы послушать трек, или откройте историю работы над ним.</p>
+      <h1 class="sec-title">Примеры работ.</h1>
+      <p>Музыкальные проекты, над которыми я работал. Нажмите на обложку, чтобы послушать трек.</p>
     </div>
   </section>
 
@@ -63,7 +64,6 @@
           <div>
             <h2 class="track__title">Butterflies</h2>
             <p class="track__artist">Armen</p>
-            <p class="track__link"><a class="more" href="track-armen-butterflies.html">История трека&nbsp;<span class="arr">→</span></a></p>
           </div>
         </article>
 
@@ -74,7 +74,6 @@
           <div>
             <h2 class="track__title">Since you have disappeared</h2>
             <p class="track__artist">Armen</p>
-            <p class="track__link"><a class="more" href="track-armen-since-you-have-disappeared.html">История трека&nbsp;<span class="arr">→</span></a></p>
           </div>
         </article>
 
@@ -107,7 +106,6 @@
           <div>
             <h2 class="track__title">Mi Amor</h2>
             <p class="track__artist">Eduardo Ross</p>
-            <p class="track__link"><a class="more" href="track-eduardo-ross-mi-amor.html">История трека&nbsp;<span class="arr">→</span></a></p>
           </div>
         </article>
 
@@ -140,7 +138,6 @@
           <div>
             <h2 class="track__title">Вслед</h2>
             <p class="track__artist">Саша Козлова</p>
-            <p class="track__link"><a class="more" href="track-sasha-kozlova-vsled.html">История трека&nbsp;<span class="arr">→</span></a></p>
           </div>
         </article>
 
@@ -148,19 +145,22 @@
     </div>
   </section>
 
-  <section class="section contact" style="text-align:center;padding-top:0">
+  <section class="section cta">
     <div class="container">
-      <h2>Обсудим ваш проект?</h2>
+      <span class="eyebrow">Контакты</span>
+      <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Если вам близко это звучание, расскажите о своей песне. Обсудим задачу, сроки и стоимость.</p>
-      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="btn btn--ghost" href="services.html">Услуги</a>
+      <div class="cta__actions">
+        <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="services.html">Услуги</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+    <p class="footer-legal"><span>Самозанятый Малышев Максим Александрович</span><i> · </i><span>ИНН 025700470116</span><i> · </i><span>Сфера деятельности: артист, музыкант, певец</span><i> · </i><span><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></span></p>
   </div>
 </footer>
 

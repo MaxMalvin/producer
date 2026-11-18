@@ -14,8 +14,8 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Услуги — MAX MALVIN">
 <meta property="og:description" content="Продюсирование песен, аранжировка, сведение, мастеринг, запись голоса. Как проходит работа.">
-<meta property="og:url" content="https://your-domain.ru/services.html">
-<meta property="og:image" content="https://your-domain.ru/assets/og/og-default.jpg">
+<meta property="og:url" content="https://maxmalvin.github.io/producer/services.html">
+<meta property="og:image" content="https://maxmalvin.github.io/producer/assets/og/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,9 +24,10 @@
 .svc-page{padding-block:40px 24px}
 .svc-page .lead-big{margin-top:6px}
 .sv{padding-block:0}
-.cta{text-align:center}
-.cta p{max-width:30em;margin-inline:auto}
-.cta .btn{margin:6px 4px}
+.checks--get{margin:0;gap:0}
+.checks--get li{padding:15px 0 15px 24px;border-bottom:1px solid var(--line);color:var(--text)}
+.checks--get li:first-child{border-top:1px solid var(--line)}
+.checks--get li::before{top:1.55em}
 @media(min-width:768px){.svc-page{padding-block:72px 40px}}
 </style>
 </head>
@@ -57,6 +58,23 @@
   <section class="section">
     <div class="container">
       <div class="split">
+        <div>
+          <h2 class="sec-title sec-title--sm">Что вы получите.</h2>
+          <p class="sec-sub">Входит в продюсирование песни.</p>
+        </div>
+        <ul class="checks checks--get">
+          <li>Три серии правок</li>
+          <li>Одна запись вокала</li>
+          <li>Аранжировка</li>
+          <li>Минусовка с бэками</li>
+          <li>Минусовка без бэков</li>
+          <li>Готовая песня</li>
+          <li>Минусовки для живых выступлений</li>
+          <li>Хранение вашего трека в облаке в течение года</li>
+          <li>Возможность удалённо слушать работу над проектом в реальном времени в формате стрима</li>
+        </ul>
+      </div>
+      <div class="split">
         <h2 class="sec-title sec-title--sm">Дополнительно.</h2>
         <ol class="prod__stages prod__stages--plain" style="margin-top:0">
           <li><strong>Запись и сведение живых концертов</strong><span>Запись выступления и сведение живого звука</span></li>
@@ -67,13 +85,15 @@
       <div class="split">
         <div>
           <h2 class="sec-title sec-title--sm">Как я работаю.</h2>
-          <p class="lead-big">Путь от идеи до готовой песни.</p>
+          <p class="sec-sub">Путь от идеи до готовой песни.</p>
         </div>
         <ol class="prod__stages" style="margin-top:0">
-          <li><span class="prod__n">01</span><strong>Знакомство и идея</strong><span>Обсуждаем вашу песню, референсы и задачу: что должно получиться в итоге</span></li>
-          <li><span class="prod__n">02</span><strong>Аранжировка</strong><span>Создаю основу звучания и структуру песни под ваш замысел</span></li>
-          <li><span class="prod__n">03</span><strong>Запись</strong><span>При необходимости организую запись голоса или инструментов на студии</span></li>
-          <li><span class="prod__n">04</span><strong>Сведение и мастеринг</strong><span>Собираю дорожки в цельное звучание и довожу трек до релиза</span></li>
+          <li><span class="prod__n">01</span><strong>Знакомство и задача</strong><span>Вы присылаете демо, референсы или просто идею. Обсуждаем, что должно получиться, и договариваемся о сроках и стоимости</span></li>
+          <li><span class="prod__n">02</span><strong>Музыкальная концепция</strong><span>Предлагаю направление звучания и показываю его на небольшом фрагменте, чтобы мы одинаково понимали результат до основной работы</span></li>
+          <li><span class="prod__n">03</span><strong>Аранжировка</strong><span>Собираю песню целиком: партии, структура, саунд-дизайн. Промежуточные версии вы слышите по ходу работы, в том числе удалённо в формате стрима</span></li>
+          <li><span class="prod__n">04</span><strong>Запись</strong><span>Организую запись вокала на студии. Если нужны живые инструменты, записываю их</span></li>
+          <li><span class="prod__n">05</span><strong>Сведение и правки</strong><span>Свожу дорожки в цельный микс. Вы слушаете, говорите, что поправить, и мы делаем до трёх серий правок</span></li>
+          <li><span class="prod__n">06</span><strong>Финальное звучание</strong><span>Мастеринг для площадок. Вы получаете готовую песню и минусовки с бэками и без, трек хранится в облаке в течение года</span></li>
         </ol>
       </div>
     </div>
@@ -81,17 +101,20 @@
 
   <section class="section cta">
     <div class="container">
+      <span class="eyebrow">Контакты</span>
       <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Напишите, на каком этапе ваша песня и что вы хотите получить. Я подскажу, с чего лучше начать, и назову сроки и стоимость.</p>
-      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
+      <div class="cta__actions">
+        <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+    <p class="footer-legal"><span>Самозанятый Малышев Максим Александрович</span><i> · </i><span>ИНН 025700470116</span><i> · </i><span>Сфера деятельности: артист, музыкант, певец</span><i> · </i><span><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></span></p>
   </div>
 </footer>
 

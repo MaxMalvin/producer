@@ -7,7 +7,7 @@
 <title>MAX MALVIN — музыкальный продюсер, звукорежиссёр, музыкант</title>
 <meta name="description" content="Макс Малвин — музыкальный продюсер. Помогаю артистам создавать песни: продюсирование, аранжировка, сведение, мастеринг, запись.">
 
-<!-- Иконки и превью для мессенджеров. https://your-domain.ru замените на адрес сайта -->
+<!-- Иконки и превью для мессенджеров. https://maxmalvin.github.io/producer замените на адрес сайта -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -16,8 +16,8 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="MAX MALVIN — музыкальный продюсер">
 <meta property="og:description" content="Помогаю артистам создавать песни: продюсирование, аранжировка, сведение, мастеринг, запись.">
-<meta property="og:url" content="https://your-domain.ru/">
-<meta property="og:image" content="https://your-domain.ru/assets/og/og-default.jpg">
+<meta property="og:url" content="https://maxmalvin.github.io/producer/">
+<meta property="og:image" content="https://maxmalvin.github.io/producer/assets/og/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,9 +30,9 @@
 .hero__photo{order:-1;aspect-ratio:1/1.02;object-fit:cover;object-position:50% 18%;max-width:none;width:calc(100% + var(--gutter)*2);margin-inline:calc(var(--gutter)*-1);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
 .hero__text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;margin-top:-72px;animation:rise .7s var(--ease) both}
 .hero h1{font-size:clamp(3.2rem,15vw,6.75rem);line-height:.95;letter-spacing:-.05em;margin-bottom:.2em}
-.actions{order:3;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.actions{order:4;margin-top:24px;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .actions .btn{padding-inline:16px;white-space:nowrap}
-.hero__lead{order:4;max-width:30em;margin:26px 0 0;font-size:1.08rem;line-height:1.65;color:#bfbdb6}
+.hero__lead{order:3;max-width:30em;margin:26px 0 0;font-size:1.08rem;line-height:1.65;color:#bfbdb6}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}}
 .svc{display:grid;gap:36px}
 #works{scroll-margin-top:var(--header-h)}
@@ -52,13 +52,11 @@
 .about-mini .quote::before{content:"\201C";display:block;height:.45em;margin-bottom:.25em;font:700 4.5rem/1 Georgia,serif;color:#fff;opacity:.85}
 .about-mini .avatar{width:min(58vw,220px);aspect-ratio:1;margin:44px auto 36px;display:block;border-radius:50%;object-fit:cover;object-position:50% 25%;box-shadow:0 0 0 1px var(--line-2),0 0 0 9px var(--bg),0 0 0 10px rgba(255,255,255,.55),0 40px 90px -30px rgba(255,255,255,.22)}
 .about-mini .more{margin:0}
+.about-mini__fact{margin:18px 0 0;font:500 .74rem/1.5 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .covers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:560px;margin-inline:auto}
-.contact{text-align:center}
-.contact p{max-width:30em;margin-inline:auto}
-.contact .btn{margin:8px 4px 0}
 .contact__mail{display:block;margin-top:18px;color:var(--muted)}
 @media(min-width:768px){
-  .hero{padding-block:72px 112px}
+  .hero{padding-block:72px 72px}
   .hero__grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
   .hero__photo{order:2;aspect-ratio:4/5;max-height:78vh;width:100%;margin-inline:0;border-radius:var(--radius-lg);border:1px solid var(--line);-webkit-mask-image:none;mask-image:none}
   .hero__text{margin-top:0}
@@ -80,7 +78,7 @@
       <div class="hero__text">
         <span class="eyebrow">Музыкальный продюсер</span>
         <h1 class="grad-white" aria-label="MAX MALVIN"><span class="w">MAX</span><span class="w">MALVIN</span></h1>
-        <p class="hero__lead">Я помогаю артистам реализовать их песню от идеи до финального профессионального звучания.</p>
+        <p class="hero__lead">Я помогаю артистам реализовать их песню от идеи до финального звучания.</p>
         <div class="actions">
           <a class="btn" href="#contact">Обсудить проект</a>
           <a class="btn btn--ghost" href="#works">Слушать работы</a>
@@ -96,7 +94,7 @@
       <div class="works__head">
         <h2 class="sec-title">Примеры работ.</h2>
         <p class="sec-note">Недавние проекты</p>
-        <p class="lead-big">Проекты, над которыми я работал. Послушайте <em>результат</em> и посмотрите, какую <em>роль</em> я выполнял в каждом из них.</p>
+        <p class="lead-big">Проекты, над которыми я работал. Нажмите на обложку, чтобы послушать <em>результат</em>.</p>
       </div>
       <div class="covers">
         <button class="cover" type="button" data-track data-src="assets/portfolio-audio/eduardo-ross-mi-amor.mp3" data-title="Mi Amor" data-artist="Eduardo Ross" data-cover="assets/portfolio-audio/eduardo-ross-mi-amor.webp" aria-label="Слушать: Eduardo Ross — Mi Amor"><img src="assets/portfolio-audio/eduardo-ross-mi-amor.webp" alt="" loading="lazy"></button>
@@ -138,19 +136,22 @@
     <div class="container about-mini">
       <h2 class="sec-title">Обо мне.</h2>
       <p class="quote">Музыка — моя страсть и любовь с самого детства.</p>
+      <p class="about-mini__fact">15 лет в музыке · Институт современного искусства</p>
       <img class="avatar" src="assets/img/about.webp" alt="Макс Малвин" width="440" height="440" loading="lazy">
       <a class="more" href="about.html">Подробнее&nbsp;<span class="arr">→</span></a>
     </div>
   </section>
 
   <!-- Контакты -->
-  <section class="section contact" id="contact">
+  <section class="section cta" id="contact">
     <div class="container">
       <span class="eyebrow">Контакты</span>
       <h2 class="grad-white">Обсудим ваш проект?</h2>
       <p>Расскажите о своей идее или песне. Обсудим задачу, варианты работы, сроки и стоимость.</p>
-      <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
+      <div class="cta__actions">
+        <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="mailto:musicmaks@mail.ru">Написать на почту</a>
+      </div>
     </div>
   </section>
 </main>
@@ -160,8 +161,7 @@
     <ul class="footer-nav">
       <li><a href="education.html">Обучение</a></li>
       <li><a href="materials.html">Материалы</a></li>
-      <li><a href="artist.html">Artist</a></li>
-      <li><a href="portfolio-video-photo.html">Фото и видео портфолио</a></li>
+      <li><a href="artist.html">Артист</a></li>
     </ul>
     <ul class="socials">
       <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
@@ -169,7 +169,7 @@
       <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
-    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>
+    <p class="footer-legal"><span>Самозанятый Малышев Максим Александрович</span><i> · </i><span>ИНН 025700470116</span><i> · </i><span>Сфера деятельности: артист, музыкант, певец</span><i> · </i><span><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></span></p>
   </div>
 </footer>
 

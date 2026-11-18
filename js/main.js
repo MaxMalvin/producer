@@ -2,6 +2,7 @@
   const NAV = [
     ['index.html', 'Главная'],
     ['portfolio.html', 'Портфолио'],
+    ['portfolio-video-photo.html', 'Видео портфолио'],
     ['services.html', 'Услуги'],
     ['about.html', 'Обо мне'],
   ];
@@ -17,8 +18,7 @@
     <ul class="footer-nav">
       <li><a href="education.html">Обучение</a></li>
       <li><a href="materials.html">Материалы</a></li>
-      <li><a href="artist.html">Artist</a></li>
-      <li><a href="portfolio-video-photo.html">Фото и видео портфолио</a></li>
+      <li><a href="artist.html">Артист</a></li>
     </ul>
     <ul class="socials">
       <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
@@ -26,7 +26,7 @@
       <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
-    <p>Самозанятый Малышев Максим Александрович · ИНН 025700470116 · Сфера деятельности: артист, музыкант, певец · <a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></p>`;
+    <p class="footer-legal"><span>Самозанятый Малышев Максим Александрович</span><i> · </i><span>ИНН 025700470116</span><i> · </i><span>Сфера деятельности: артист, музыкант, певец</span><i> · </i><span><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></span></p>`;
   }
 
   // Мягкое появление секций при прокрутке (один раз)
@@ -65,7 +65,7 @@
     <ul class="menu__social">
       <li><a href="https://instagram.com/mr.musicmax" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.youtube.com/@musicmax7" target="_blank" rel="noopener">YouTube</a></li>
-      <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">Канал</a></li>
+      <li><a href="https://t.me/+HkLnCbRnTKdjMWIy" target="_blank" rel="noopener">ТГ канал</a></li>
     </ul>
   </div>
 </nav>`);
