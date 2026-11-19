@@ -307,6 +307,7 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
 @media (hover:hover){.story__back:hover{color:var(--text)}}
 .story__head{display:grid;gap:28px;align-items:center;animation:rise .6s var(--ease) both}
 .story__head h1{margin-bottom:.15em}
+.story__shot{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)}
 .story__artist{margin:0 0 18px;font-size:1.25rem;color:var(--text)}
 .story__lead{max-width:30em;margin:22px 0 0;font-size:1.05rem}
 .story-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}

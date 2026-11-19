@@ -5,25 +5,66 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0a0a0b">
 <meta name="robots" content="noindex,nofollow">
-<title>Стоимость видеопродакшена — MAX MALVIN</title>
+<title>Цены на съёмку видео и фото — MAX MALVIN</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css">
 <style>
 .page-head{padding-block:40px 8px}
-.page-head p{max-width:34em;font-size:1.05rem}
-.price-group+.price-group{margin-top:48px}
-.price-group h2{margin-bottom:20px}
-.prices{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.prices li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.prices__name{font-size:1.05rem}
-.prices__sum{font:600 1.05rem var(--font-mono);white-space:nowrap}
-.note{margin:20px 0 0;font-size:.9rem}
+.fmt{display:grid;gap:12px;margin-top:8px}
+.fmt__btn{display:grid;gap:6px;text-align:left;padding:18px 20px;border:1px solid var(--line-2);border-radius:var(--radius);background:transparent;color:var(--text);transition:border-color .2s,background-color .2s}
+.fmt__btn strong{font-size:1.05rem;font-weight:600}
+.fmt__btn span{font-size:.88rem;line-height:1.45;color:var(--muted)}
+.fmt__btn[aria-selected="true"]{border-color:var(--accent);background:rgba(226,171,82,.07)}
+.fmt__btn[aria-selected="true"] strong{color:var(--accent)}
+@media (hover:hover){.fmt__btn:hover{border-color:var(--text)}.fmt__btn[aria-selected="true"]:hover{border-color:var(--accent)}}
+.est__lead{margin:28px 0 0;max-width:40em;font-size:1.02rem}
+.est__bar{display:flex;justify-content:flex-end;min-height:24px;margin-top:4px}
+.est__reset{font-size:.85rem;color:var(--muted);transition:color .2s}
+@media (hover:hover){.est__reset:hover{color:var(--text)}}
+.est__group{margin-top:36px}
+.est__group h2{font-size:clamp(1.3rem,4vw,1.8rem);margin-bottom:8px}
+.est__intro{margin:0 0 4px;font-size:.92rem;max-width:40em}
+.est__list{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--line)}
+.est__row{display:grid;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.est__info{display:grid;gap:6px;min-width:0}
+.est__name{font-size:1.05rem;font-weight:500;transition:color .25s}
+.est__desc{font-size:.9rem;line-height:1.5;color:var(--muted);max-width:36em}
+.est__side{display:grid;grid-template-columns:1fr auto;grid-template-areas:"price ctl" "line ctl";column-gap:14px;row-gap:2px;align-items:center}
+.est__price{grid-area:price;font:500 .85rem var(--font-mono);white-space:nowrap}
+.est__price i{font-style:normal;color:var(--muted)}
+.est__line{grid-area:line;font:600 .95rem var(--font-mono);color:var(--accent);white-space:nowrap;min-height:1.2em}
+.est__step,.est__chk,.est__inc{grid-area:ctl;justify-self:end}
+.est__step{display:inline-flex;align-items:center;gap:6px}
+.est__step button,.est__chk{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--text);font-size:1.25rem;line-height:1;display:grid;place-items:center;transition:border-color .2s,background-color .2s,color .2s,opacity .2s}
+.est__step output{min-width:2ch;text-align:center;font:600 1rem var(--font-mono)}
+.est__step button:disabled{opacity:.3}
+.est__chk{border-radius:12px}
+.est__chk::after{content:"";width:12px;height:7px;border-left:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:rotate(-45deg) translate(1px,-1px);opacity:0;transition:opacity .15s}
+.est__chk[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.est__chk[aria-pressed="true"]::after{opacity:1}
+.est__inc{padding:6px 12px;border:1px solid rgba(226,171,82,.45);border-radius:999px;font:500 .68rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.est__inc--soft{border-color:var(--line-2);color:var(--muted)}
+@media (hover:hover){.est__step button:not(:disabled):hover,.est__chk:hover{border-color:var(--text)}}
+.est__row.is-on .est__name,.est__row.is-fixed .est__name{color:var(--accent)}
+.est__total{position:sticky;bottom:12px;z-index:20;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border:1px solid var(--line-2);border-radius:999px;background:rgba(17,17,19,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 14px 40px -18px rgba(0,0,0,.9)}
+.est__sum{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.est__sum small{font:500 .6rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.est__sum strong{font:600 1.3rem/1.2 var(--font-sans);letter-spacing:-.02em;white-space:nowrap}
+.est__btn{min-height:42px;padding:0 22px;font-size:.92rem;white-space:nowrap}
+.est__btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.est__note{margin:18px 0 0;font-size:.88rem;max-width:40em}
 @media(min-width:768px){
   .page-head{padding-block:72px 16px}
-  .prices li{padding:22px 0}
-  .prices__name,.prices__sum{font-size:1.2rem}
+  .fmt{grid-template-columns:repeat(3,1fr);gap:16px}
+  .fmt__btn{padding:22px 24px}
+  .est__row{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px;padding:26px 0}
+  .est__side{grid-template-columns:160px 100px 122px;grid-template-areas:none;column-gap:18px;row-gap:0}
+  .est__price,.est__line,.est__step,.est__chk,.est__inc{grid-area:auto}
+  .est__price,.est__line{text-align:right}
+  .est__total{max-width:560px;margin-inline:auto 0;padding:8px 8px 8px 26px}
+  .est__sum strong{font-size:1.45rem}
 }
 </style>
 </head>
@@ -32,22 +73,25 @@
 <main>
   <section class="page-head">
     <div class="container">
-      <span class="eyebrow">Видеопродакшен</span>
-      <h1>Стоимость видеопродакшена</h1>
+      <span class="eyebrow">Видео и фото</span>
+      <h1>Цены на съёмку видео и фото сессий</h1>
+      <p>Выберите формат съёмки и отметьте, что вам нужно: сумма посчитается сама. Это ориентир, точную смету я составлю после обсуждения проекта.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="estimate">
     <div class="container">
-      <div class="price-group">
-        <ul class="prices">
-          <li><span class="prices__name">Съёмочная смена</span><span class="prices__sum">10 000 ₽</span></li>
-          <li><span class="prices__name">Аренда камеры и оборудования</span><span class="prices__sum">10 000 ₽</span></li>
-          <li><span class="prices__name">Монтаж</span><span class="prices__sum">10 000 ₽</span></li>
-          <li><span class="prices__name">Покраска и цвет</span><span class="prices__sum">10 000 ₽</span></li>
-        </ul>
-        <p class="note">Смета под каждую съёмку составляется отдельно. Указаны общие цены.</p>
+      <div class="fmt" id="fmt" role="tablist" aria-label="Формат съёмки"></div>
+      <p class="est__lead" id="estLead"></p>
+      <div class="est__bar"><button class="est__reset" type="button" id="estReset" hidden>Сбросить выбор</button></div>
+      <div id="estBody"></div>
+
+      <div class="est__total">
+        <div class="est__sum"><small id="estLabel">Итого</small><strong id="estSum">0 ₽</strong></div>
+        <a class="btn est__btn" id="estSend" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Отправить смету</a>
       </div>
+      <p class="est__note" id="estNote"></p>
+      <noscript><p class="est__note">Для расчёта сметы нужен включённый JavaScript. Напишите мне в Telegram, и я посчитаю вручную.</p></noscript>
     </div>
   </section>
 
@@ -75,5 +119,99 @@
 </footer>
 
 <script src="js/main.js" defer></script>
+<script>
+(function(){
+  /* Цены задаются здесь. type: fixed (включено), qty (количество), check (галочка), info (без цены) */
+  var SHIFT={id:'shift',name:'Съёмочная смена оператора',desc:'Мой рабочий день как оператора: я приезжаю на площадку и снимаю в течение дня. В цену входят моя работа и время, техника считается отдельно.',price:10000,unit:'за смену',type:'fixed'};
+  var POST=[
+    {id:'edit',name:'Монтаж',desc:'Сборка видео из отснятого материала. Если роликов несколько, считается каждый.',price:10000,unit:'за ролик',type:'qty'},
+    {id:'color',name:'Цвет',desc:'Цветокоррекция и подбор картинки под настроение.',price:10000,unit:'за ролик',type:'qty'},
+    {id:'ai',name:'Обработка с помощью ИИ',desc:'Дополнительная обработка изображения нейросетями.',price:5000,unit:'за проект',type:'check'},
+    {id:'sound',name:'Работа со звуком',desc:'Очистка и синхронизация звука со съёмки.',price:5000,unit:'за проект',type:'check'}
+  ];
+  var CAM={id:'camset',name:'Камера',desc:'Комплект для съёмки: камера, объективы, штатив, питание и другие принадлежности для камерного сетапа.',price:10000,unit:'за день',type:'check'};
+  var LIGHT={id:'lightset',name:'Свет',desc:'Комплект света: основные и дополнительные источники, стойки, софтбоксы, отражатели и прочие модификаторы.',price:10000,unit:'за день',type:'check'};
+  var TABS=[
+    {id:'mobile',title:'Мобильная съёмка',sub:'Только телефон и один-два источника света',
+     lead:'Снимаю на телефон с одним-двумя источниками света. Подходит для коротких видео, анонсов и набросков.',
+     groups:[
+      {title:'Съёмка',intro:'',rows:[SHIFT]},
+      {title:'Оборудование',intro:'',rows:[{id:'light2',name:'Свет',desc:'Один или два источника света.',price:5000,unit:'за день',type:'check'}]},
+      {title:'Постпродакшен',intro:'',rows:POST}]},
+    {id:'camera',title:'Съёмка на камеру',sub:'Горизонтальный формат или вертикальный под рилсы',
+     lead:'Съёмка на камеру в горизонтальном формате или в вертикальном под рилсы. За одну съёмку можно снять сразу несколько рилсов или несколько музыкальных набросков.',
+     groups:[
+      {title:'Съёмка',intro:'',rows:[SHIFT,{id:'gaffer',name:'Гафер',desc:'Помощник, который ставит и настраивает свет на площадке.',price:6000,unit:'за смену',type:'check'}]},
+      {title:'Аренда оборудования',intro:'Каждый комплект стоит одной суммой, в него входит всё нужное для съёмки.',rows:[CAM,LIGHT]},
+      {title:'Постпродакшен',intro:'',rows:POST}]},
+    {id:'clip',title:'Музыкальный клип',sub:'Большая команда и полноценная съёмка',
+     lead:'Полноценное музыкальное видео: съёмочная группа, свет, локации. Такие съёмки я планирую вместе с вами, поэтому сумма ниже показывает только основу.',
+     from:true,
+     groups:[
+      {title:'Съёмка',intro:'',rows:[SHIFT,{id:'gaffer',name:'Гафер',desc:'Помощник, который ставит и настраивает свет на площадке.',price:6000,unit:'за смену',type:'check'},{id:'team',name:'Команда, локации и реквизит',desc:'Режиссёр, ассистенты, площадка, костюмы и другие задачи под вашу идею. Считаю отдельно после обсуждения.',type:'info',tag:'Отдельно'}]},
+      {title:'Аренда оборудования',intro:'Каждый комплект стоит одной суммой, в него входит всё нужное для съёмки.',rows:[CAM,LIGHT]},
+      {title:'Постпродакшен',intro:'',rows:POST}]}
+  ];
+  var NOTE={mobile:'Цены ориентировочные. Точную смету я составлю вместе с вами.',camera:'Цены ориентировочные. Аренда техники и работа помощников зависят от задачи, а итоговую смету под вашу съёмку я составлю вместе с вами.',clip:'Для клипа я не называю точную сумму заранее: она зависит от команды, локаций и идеи. Показана ориентировочная основа.'};
+  var cur=0,state={};
+  var fmt=function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00A0')+'\u00A0₽'};
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')};
+  var $=function(id){return document.getElementById(id)};
+  function key(r){return TABS[cur].id+':'+r.id}
+  function drawTabs(){
+    $('fmt').innerHTML=TABS.map(function(t,i){return '<button class="fmt__btn" type="button" role="tab" aria-selected="'+(i===cur)+'" data-i="'+i+'"><strong>'+t.title+'</strong><span>'+t.sub+'</span></button>'}).join('');
+  }
+  function drawBody(){
+    var t=TABS[cur];
+    $('estLead').textContent=t.lead; $('estNote').textContent=NOTE[t.id];
+    $('estLabel').textContent=t.from?'Итого, от':'Итого';
+    $('estBody').innerHTML=t.groups.map(function(g){
+      return '<div class="est__group"><h2>'+g.title+'</h2>'+(g.intro?'<p class="est__intro">'+g.intro+'</p>':'')+'<ul class="est__list">'+g.rows.map(function(r){
+        var ctl='';
+        if(r.type==='qty') ctl='<div class="est__step"><button type="button" class="est__minus" aria-label="Меньше">−</button><output>0</output><button type="button" class="est__plus" aria-label="Больше">+</button></div>';
+        else if(r.type==='check') ctl='<button class="est__chk" type="button" aria-pressed="false" aria-label="Добавить: '+esc(r.name)+'"></button>';
+        else if(r.type==='fixed') ctl='<span class="est__inc">Включено</span>';
+        else ctl='<span class="est__inc est__inc--soft">'+(r.tag||'')+'</span>';
+        var price=r.price?'<span class="est__price">'+fmt(r.price)+' <i>'+r.unit+'</i></span>':'<span class="est__price"></span>';
+        return '<li class="est__row'+(r.type==='fixed'?' is-fixed':'')+'" data-id="'+r.id+'"><div class="est__info"><span class="est__name">'+r.name+'</span><span class="est__desc">'+r.desc+'</span></div><div class="est__side">'+price+'<span class="est__line"></span>'+ctl+'</div></li>';
+      }).join('')+'</ul></div>';
+    }).join('');
+    update();
+  }
+  function rowsOf(){var out=[];TABS[cur].groups.forEach(function(g){g.rows.forEach(function(r){out.push(r)})});return out}
+  function update(){
+    var total=0,lines=[],picked=false,t=TABS[cur];
+    rowsOf().forEach(function(r){
+      var el=document.querySelector('.est__row[data-id="'+r.id+'"]'); if(!el) return;
+      if(r.type==='info') return;
+      var q=r.type==='fixed'?1:(state[key(r)]||0), sum=q*r.price;
+      if(r.type!=='fixed'){
+        el.classList.toggle('is-on',q>0);
+        el.querySelector('.est__line').textContent=q>0?fmt(sum):'';
+        var out=el.querySelector('output'); if(out){out.textContent=q;el.querySelector('.est__minus').disabled=q===0}
+        var ch=el.querySelector('.est__chk'); if(ch) ch.setAttribute('aria-pressed',q>0?'true':'false');
+        if(q>0) picked=true;
+      }
+      if(q>0){total+=sum;lines.push('• '+r.name+(r.type==='qty'?' × '+q:'')+' — '+fmt(sum))}
+    });
+    $('estSum').textContent=fmt(total);
+    $('estReset').hidden=!picked;
+    var msg='Здравствуйте! Хочу обсудить съёмку. Формат: '+t.title+'.\nМоя примерная смета:\n'+lines.join('\n')+'\nИтого'+(t.from?', от':'')+': '+fmt(total);
+    $('estSend').href='https://t.me/MusicMaks?text='+encodeURIComponent(msg);
+  }
+  $('fmt').addEventListener('click',function(ev){var b=ev.target.closest('.fmt__btn');if(!b)return;cur=+b.dataset.i;drawTabs();drawBody()});
+  $('estBody').addEventListener('click',function(ev){
+    var b=ev.target.closest('button'),li=ev.target.closest('.est__row'); if(!b||!li) return;
+    var r=rowsOf().filter(function(x){return x.id===li.dataset.id})[0], k=key(r), q=state[k]||0;
+    if(b.classList.contains('est__plus')) q=Math.min(9,q+1);
+    else if(b.classList.contains('est__minus')) q=Math.max(0,q-1);
+    else if(b.classList.contains('est__chk')) q=q?0:1;
+    state[k]=q; update();
+  });
+  $('estReset').addEventListener('click',function(){TABS[cur].groups.forEach(function(g){g.rows.forEach(function(r){state[key(r)]=0})});update()});
+  drawTabs();drawBody();
+})();
+</script>
+
 </body>
 </html>

@@ -35,6 +35,13 @@
 .mix--3 a{aspect-ratio:1/1}
 .mix--3 img{height:100%;object-fit:cover}
 @media(min-width:768px){.mix{gap:16px}.mix--3{margin-top:16px}}
+.project__link{margin:16px 0 0;text-align:right;max-width:820px}
+.project__link .more{padding:0;background:none;font:500 .7rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.project__link .more .u{text-decoration:underline;text-decoration-color:rgba(226,171,82,.55);text-decoration-thickness:1px;text-underline-offset:5px;transition:text-decoration-color .25s}
+@media (hover:hover){.project__link .more:hover .u{text-decoration-color:var(--accent)}}
+.project__link .more .arr{color:var(--accent);margin-left:2px}
+@media(hover:hover){.project__link .more:hover{color:var(--text);background:none}}
+@media(min-width:1000px){.project__link{max-width:none}}
 .project h2{font-size:clamp(1.3rem,4vw,1.8rem);margin-bottom:20px}
 .gallery a{display:block;width:calc(50% - 6px);border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg-2)}
 .gallery img{width:100%;height:auto;transition:transform .4s var(--ease)}
@@ -73,23 +80,24 @@
 <main>
   <section class="page-head">
     <div class="container">
-      <span class="eyebrow">Съёмка и монтаж</span>
+      <span class="eyebrow">Съёмка, монтаж, цвет</span>
       <h1 class="sec-title">Видео портфолио.</h1>
-      <p>Все эти работы я выполнил сам: делал съёмку, монтаж и цвет, а также занимался всей организацией съёмок.</p>
-      <p class="page-head__link"><a class="more" href="price-video.html">Стоимость видеопродакшена&nbsp;<span class="arr">→</span></a></p>
+      <p>В этих проектах я один вёл весь процесс: организовывал съёмку, снимал, монтировал и работал с цветом.</p>
+      <p class="page-head__link"><a class="more" href="price-video.html">Цены на съёмку&nbsp;<span class="arr">→</span></a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="project">
-        <h2>Luciee</h2>
+        <h2>Luciee — Live Studio Session</h2>
         <div class="gallery">
           <a href="assets/portfolio-video/luciee-1.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/luciee-1.webp" alt="Luciee, кадр 1" loading="lazy"></a>
           <a href="assets/portfolio-video/luciee-2.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/luciee-2.webp" alt="Luciee, кадр 2" loading="lazy"></a>
           <a href="assets/portfolio-video/luciee-3.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/luciee-3.webp" alt="Luciee, кадр 3" loading="lazy"></a>
           <a href="assets/portfolio-video/luciee-4.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/luciee-4.webp" alt="Luciee, кадр 4" loading="lazy"></a>
         </div>
+        <p class="project__link"><a class="more" href="video-luciee.html"><span class="u">История проекта</span>&nbsp;<span class="arr">→</span></a></p>
       </div>
 
       <div class="project">
@@ -100,6 +108,7 @@
           <a href="assets/portfolio-video/masha-koltsova-3.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/masha-koltsova-3.webp" alt="Маша Кольцова, кадр 3" loading="lazy"></a>
           <a href="assets/portfolio-video/masha-koltsova-4.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/masha-koltsova-4.webp" alt="Маша Кольцова, кадр 4" loading="lazy"></a>
         </div>
+        <p class="project__link"><a class="more" href="video-masha-koltsova.html"><span class="u">История проекта</span>&nbsp;<span class="arr">→</span></a></p>
       </div>
 
       <div class="project">
@@ -115,6 +124,7 @@
           <a href="assets/portfolio-video/armen-spotify-3.webp" target="_blank" rel="noopener"><img src="assets/portfolio-video/armen-spotify-3.webp" alt="Armen, Spotify 3" loading="lazy"></a>
         </div>
         </div>
+        <p class="project__link"><a class="more" href="video-armen.html"><span class="u">История проекта</span>&nbsp;<span class="arr">→</span></a></p>
       </div>
     </div>
   </section>
@@ -129,7 +139,7 @@
         <p>Смета составляется отдельно под каждый проект. Напишите, и я всё рассчитаю.</p>
         <div class="cta__actions">
           <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="btn btn--ghost" href="price-video.html">Стоимость съёмки</a>
+          <a class="btn btn--ghost" href="price-video.html">Цены на съёмку</a>
         </div>
       </div>
     </div>
@@ -145,7 +155,7 @@
 <script src="js/main.js" defer></script>
 <script>
 (() => {
-  const links = [...document.querySelectorAll('.project a')];
+  const links = [...document.querySelectorAll('.project a')].filter((a) => a.querySelector('img'));
   if (!links.length) return;
   const lb = document.createElement('div');
   lb.className = 'lb';
