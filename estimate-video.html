@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0b">
+<meta name="robots" content="noindex,nofollow">
+<title>Смета на съёмку — MAX MALVIN</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.page-head{padding-block:40px 8px}
+.est__back{display:flex;width:max-content;align-items:center;margin:0 0 22px;font-size:.92rem;color:var(--muted);transition:color .2s}
+@media (hover:hover){.est__back:hover{color:var(--text)}}
+.est__back .arr{color:var(--accent)}
+.cards{display:grid;gap:16px;margin-top:8px;align-items:start}
+.card2{display:flex;flex-direction:column;padding:26px 22px 24px;border:1px solid var(--line-2);border-radius:var(--radius);background:var(--bg-2);scroll-margin-top:84px}
+.card2 h2{font-size:1.35rem;margin:0}
+.card2__price{margin:18px 0 0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.card2__price small{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card2__price strong{font:600 2rem/1.1 var(--font);letter-spacing:-.02em;color:var(--accent);white-space:nowrap}
+.card2__reset{margin-top:8px;align-self:flex-start;font-size:.82rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.card2__reset[hidden]{display:none}
+@media (hover:hover){.card2__reset:hover{color:var(--text)}}
+.g-h{margin:24px 0 6px;font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lst{list-style:none;margin:0;padding:0}
+.lst li{border-top:1px solid var(--line)}
+.lst li:first-child{border-top:0}
+.it{display:flex;align-items:center;gap:12px;padding:12px 0;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;font-size:.95rem;line-height:1.35}
+.it.is-fixed,.it.is-info{cursor:default}
+.it__box{flex:none;width:20px;height:20px;border:1px solid var(--line-2);border-radius:6px;display:grid;place-items:center;transition:background-color .15s,border-color .15s}
+.it__box::after{content:"";width:9px;height:5px;border-left:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:rotate(-45deg) translate(1px,-1px);opacity:0;transition:opacity .15s}
+.it.is-on .it__box,.it.is-fixed .it__box{background:var(--accent);border-color:var(--accent)}
+.it.is-on .it__box::after,.it.is-fixed .it__box::after{opacity:1}
+.it.is-fixed .it__box{opacity:.55}
+.it.is-info .it__box{border-style:dashed;opacity:.5}
+.it__n{flex:1;min-width:0}
+.it__p{flex:none;font:500 .82rem var(--font-mono);color:var(--muted);white-space:nowrap;transition:color .15s}
+.it.is-on .it__p{color:var(--accent)}
+@media (hover:hover){.it:not(.is-fixed):not(.is-info):hover .it__box{border-color:var(--accent)}}
+.it:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.qs{display:flex;align-items:center;gap:8px;padding:0 0 12px 32px}
+.it__n{position:relative}
+.tip{position:relative;display:inline-grid;place-items:center;width:16px;height:16px;margin-left:4px;vertical-align:1px;border:1px solid var(--line-2);border-radius:50%;background:none;color:var(--muted);font:600 .62rem/1 var(--font-mono);cursor:help;transition:color .15s,border-color .15s}
+.tip::after{content:attr(data-tip);position:absolute;z-index:30;left:-8px;bottom:calc(100% + 10px);width:210px;padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;background:#18181b;color:var(--text);font:400 .82rem/1.45 var(--font);text-align:left;white-space:normal;box-shadow:0 12px 32px -12px rgba(0,0,0,.9);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s,transform .15s,visibility .15s;pointer-events:none}
+.tip:hover,.tip:focus-visible,.tip.open{color:var(--accent);border-color:var(--accent)}
+.tip:hover::after,.tip:focus-visible::after,.tip.open::after{opacity:1;visibility:visible;transform:none}
+.qs[hidden]{display:none}
+.qs button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);background:none;color:var(--text);font-size:1rem;line-height:1;display:grid;place-items:center}
+.qs button:disabled{opacity:.3}
+.qs output{min-width:2ch;text-align:center;font:600 .9rem var(--font-mono)}
+.qs span{font-size:.8rem;color:var(--muted)}
+@media (hover:hover){.qs button:not(:disabled):hover{border-color:var(--text)}}
+.card2__go{margin-top:22px}
+.card2__go .btn{width:100%;justify-content:center}
+.est__note{margin:28px 0 0;font-size:.88rem;max-width:40em}
+@media(min-width:768px){
+  .page-head{padding-block:72px 16px}
+  .cards{grid-template-columns:repeat(3,1fr);gap:20px}
+  .card2{padding:30px 26px 28px}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <a class="est__back" href="price-video.html"><span class="arr">←</span>&nbsp;Цены на съёмку</a>
+      <span class="eyebrow">Калькулятор</span>
+      <h1>Смета на съёмку</h1>
+      <p>Нажимайте на строки, чтобы добавить или убрать позицию. Сумма считается сама.</p>
+    </div>
+  </section>
+
+  <section class="section" id="estimate">
+    <div class="container">
+      <div class="cards" id="estAll"></div>
+      <p class="est__note">Цены ориентировочные. Точную смету составлю вместе с вами.</p>
+      <noscript><p class="est__note">Для расчёта сметы нужен включённый JavaScript. Напишите мне в Telegram, и я посчитаю вручную.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <div class="cta__box">
+        <div class="cta__head">
+          <span class="eyebrow">Контакты</span>
+          <h2 class="grad-white">Обсудим ваш проект?</h2>
+        </div>
+        <p>Напишите в Telegram: рассчитаю точную стоимость под вашу съёмку.</p>
+        <div class="cta__actions">
+          <a class="btn" href="https://t.me/MusicMaks" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn--ghost" href="portfolio-video-photo.html">Видео портфолио</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-legal"><span>Самозанятый Малышев Максим Александрович</span><i> · </i><span>ИНН 025700470116</span><i> · </i><span>Сфера деятельности: артист, музыкант, певец</span><i> · </i><span><a href="mailto:musicmaks@mail.ru">musicmaks@mail.ru</a></span></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/video-estimate.js"></script>
+<script>
+(function(){
+  var V=window.VE,TABS=V.TABS,fmt=V.fmt,state={};
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')};
+  var k=function(t,r){return t.id+':'+r.id};
+  function def(t){V.rowsOf(t).forEach(function(r){if(r.type!=='fixed'&&r.type!=='info')state[k(t,r)]=r.def||0})}
+  TABS.forEach(def);
+  function qOf(t,r){return r.type==='fixed'?1:(state[k(t,r)]||0)}
+  function rowHtml(r){
+    var cls='it'+(r.type==='fixed'?' is-fixed':r.type==='info'?' is-info':'');
+    var attr=(r.type==='fixed'||r.type==='info')?'':' role="checkbox" tabindex="0" aria-checked="false"';
+    return '<li data-id="'+r.id+'"><div class="'+cls+'"'+attr+'><span class="it__box"></span><span class="it__n">'+r.name+(r.hint?' <button type="button" class="tip" aria-label="Пояснение: '+esc(r.name)+'" data-tip="'+esc(r.hint)+'">?</button>':'')+'</span><span class="it__p"></span></div>'+(r.type==='qty'?'<div class="qs" hidden><button type="button" class="minus" aria-label="Меньше">−</button><output>0</output><button type="button" class="plus" aria-label="Больше">+</button><span>'+esc(r.unit)+'</span></div>':'')+'</li>';
+  }
+  function cardHtml(t,i){
+    var h='<article class="card2" id="'+t.id+'" data-i="'+i+'"><h2>'+t.title+'</h2><p class="card2__price"><small>'+(t.from?'Итого, от':'Итого')+'</small><strong></strong></p><button type="button" class="card2__reset" hidden>Вернуть состав</button>';
+    t.groups.forEach(function(g){h+='<p class="g-h">'+g.title+'</p><ul class="lst">'+g.rows.map(rowHtml).join('')+'</ul>'});
+    h+='<div class="card2__go"><a class="btn" target="_blank" rel="noopener" href="https://t.me/MusicMaks">Отправить смету</a></div></article>';
+    return h;
+  }
+  document.getElementById('estAll').innerHTML=TABS.map(cardHtml).join('');
+  function upd(i){
+    var t=TABS[i],card=document.getElementById(t.id),total=0,lines=[],changed=false;
+    V.rowsOf(t).forEach(function(r){
+      var li=card.querySelector('li[data-id="'+r.id+'"]'),it=li.querySelector('.it'),p=li.querySelector('.it__p');
+      if(r.type==='info'){p.textContent=r.tag||'';return}
+      var q=qOf(t,r),sum=q*r.price;
+      if(r.type==='fixed'){p.textContent=fmt(r.price)}
+      else{
+        it.classList.toggle('is-on',q>0);it.setAttribute('aria-checked',q>0?'true':'false');
+        p.textContent=fmt(q>0?sum:r.price);
+        var qs=li.querySelector('.qs');
+        if(qs){qs.hidden=!(q>0);qs.querySelector('output').textContent=q;qs.querySelector('.minus').disabled=q<=Math.max(1,r.min||0)&&false;qs.querySelector('.plus').disabled=q>=(r.max||9)}
+        if(q!==(r.def||0))changed=true;
+      }
+      if(q>0){total+=sum;lines.push('• '+r.name+(r.type==='qty'?' × '+q:'')+' — '+fmt(sum))}
+    });
+    card.querySelector('.card2__price strong').textContent=fmt(total);
+    card.querySelector('.card2__reset').hidden=!changed;
+    var msg='Здравствуйте! Хочу обсудить съёмку. Формат: '+t.title+'.\nМоя примерная смета:\n'+lines.join('\n')+'\nИтого'+(t.from?', от':'')+': '+fmt(total);
+    card.querySelector('.btn').href='https://t.me/MusicMaks?text='+encodeURIComponent(msg);
+  }
+  function rowOf(t,li){return V.rowsOf(t).filter(function(x){return x.id===li.dataset.id})[0]}
+  function toggle(t,r){
+    var q=state[k(t,r)]||0;
+    if(r.type==='check')q=q?0:1;
+    else if(r.type==='qty'){q=q?(r.min||0):Math.max(1,r.min||0)}
+    state[k(t,r)]=q;
+  }
+  var all=document.getElementById('estAll');
+  all.addEventListener('click',function(ev){
+    var tp=ev.target.closest('.tip');
+    document.querySelectorAll('.tip.open').forEach(function(x){if(x!==tp)x.classList.remove('open')});
+    if(tp){tp.classList.toggle('open');return}
+    var card=ev.target.closest('.card2');if(!card)return;
+    var i=+card.dataset.i,t=TABS[i];
+    if(ev.target.closest('.card2__reset')){def(t);upd(i);return}
+    var li=ev.target.closest('li');if(!li)return;
+    var r=rowOf(t,li),b=ev.target.closest('.qs button');
+    if(b){var q=state[k(t,r)]||0;if(b.classList.contains('plus'))q=Math.min(r.max||9,q+1);else q=Math.max(r.min||0,q-1);state[k(t,r)]=q;upd(i);return}
+    if(ev.target.closest('.it.is-on,.it[role="checkbox"]')){toggle(t,r);upd(i)}
+  });
+  all.addEventListener('keydown',function(ev){
+    if(ev.key!==' '&&ev.key!=='Enter')return;
+    if(ev.target.closest('.tip'))return;
+    var it=ev.target.closest('.it[role="checkbox"]');if(!it)return;
+    ev.preventDefault();var card=it.closest('.card2'),i=+card.dataset.i,t=TABS[i];
+    toggle(t,rowOf(t,it.closest('li')));upd(i);
+  });
+  document.addEventListener('click',function(ev){if(!ev.target.closest('.tip'))document.querySelectorAll('.tip.open').forEach(function(x){x.classList.remove('open')})});
+  TABS.forEach(function(t,i){upd(i)});
+  if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el)setTimeout(function(){el.scrollIntoView()},50)}
+})();
+</script>
+
+</body>
+</html>
