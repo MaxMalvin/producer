@@ -24,12 +24,27 @@
 .svc-page{padding-block:40px 24px}
 .svc-page .lead-big{margin-top:6px}
 .sv{padding-block:0}
-.checks--get{margin:0;gap:0}
-.checks--get li{padding:15px 0 15px 24px;border-bottom:1px solid var(--line);color:var(--text)}
-.checks--get li:first-child{border-top:1px solid var(--line)}
-.checks--get li::before{top:1.55em}
+.sv-card{padding:24px 22px;border:1px solid var(--line-2);border-radius:var(--radius);background:var(--bg-2)}
+.sv-card + .sv-card{margin-top:16px}
+.sv-card .prod{padding-left:0;border-left:0}
+.sv-card .prod__head strong{color:var(--text);font-size:1.35rem}
+.sv-card .prod__head span{color:var(--muted);font-size:.95rem;line-height:1.55}
+.sv-card .prod__stages{margin-top:20px}
+.sv-card .prod__stages li:first-child{padding-top:18px}
+.sv-card .prod__stages li:last-child{padding-bottom:0}
+.sv-card>.prod__stages li:first-child,.sv-card>.prod__stages li:first-child{padding-top:0!important}
+.sv-card__t{margin:0 0 6px;font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.sv-card__d{margin:0;color:var(--muted);font-size:.95rem;line-height:1.55}
+.sv-card__l{margin:16px 0 0;text-align:right}
+
+.sv-checks{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.sv-checks li{position:relative;padding:15px 0 15px 28px;border-top:1px solid var(--line);font-size:1rem;line-height:1.45}
+.sv-checks li:first-child{border-top:0;padding-top:4px}
+.sv-checks li:last-child{padding-bottom:4px}
+.sv-checks li::before{content:"";position:absolute;left:3px;top:1.35em;width:10px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.sv-checks li:first-child::before{top:.85em}
 .svc-page .lead-big{padding-left:0;border-left:0;font-size:clamp(1.05rem,4.2vw,1.3rem);line-height:1.6;max-width:26em}
-@media(min-width:768px){.svc-page{padding-block:72px 40px}}
+@media(min-width:768px){.svc-page{padding-block:72px 40px}.sv-card{padding:32px 30px}.sv-card .prod__stages li:first-child{padding-top:20px}}
 </style>
 </head>
 <body>
@@ -41,7 +56,7 @@
         <h1 class="sec-title">Услуги.</h1>
         <p class="lead-big">В зависимости от задачи я могу подключиться к отдельному <em>этапу</em> или взять на себя продюсирование <em>песни целиком</em>.</p>
       </div>
-      <div class="prod">
+      <div class="sv-card"><div class="prod">
         <div class="prod__head">
           <strong>Продюсирование</strong>
           <span>Веду песню от идеи до финального результата: аранжировка, запись, сведение и мастеринг — в одних руках. Работа над звучанием и подачей под ваш замысел, сопровождение на всех этапах до релиза.</span>
@@ -52,7 +67,7 @@
           <li><span class="prod__n">03</span><strong>Сведение</strong><span>Баланс и чистота звука, плотность и объём микса, подготовка к мастерингу</span></li>
           <li><span class="prod__n">04</span><strong>Мастеринг</strong><span>Финальная обработка трека, громкость и звучание для всех площадок</span></li>
         </ol>
-      </div>
+      </div></div>
     </div>
   </section>
 
@@ -63,24 +78,21 @@
           <h2 class="sec-title sec-title--sm">Что вы получите.</h2>
           <p class="sec-sub">Входит в продюсирование песни.</p>
         </div>
-        <ul class="checks checks--get">
-          <li>Три серии правок</li>
-          <li>Одна запись вокала</li>
-          <li>Аранжировка</li>
-          <li>Минусовка с бэками</li>
-          <li>Минусовка без бэков</li>
-          <li>Готовая песня</li>
-          <li>Минусовки для живых выступлений</li>
-          <li>Хранение вашего трека в облаке в течение года</li>
-          <li>Возможность удалённо слушать работу над проектом в реальном времени в формате стрима</li>
-        </ul>
+        <div class="sv-card"><ul class="sv-checks">
+          <li>1 запись вокала со мной, 3 часа</li>
+          <li>5 раундов правок</li>
+          <li>Мастер-микс и немастеренный микс</li>
+          <li>Стемы</li>
+          <li>Инструментал с бэками и без бэков</li>
+          <li>Год облачного хранения проекта</li>
+        </ul></div>
       </div>
       <div class="split">
         <h2 class="sec-title sec-title--sm">Дополнительно.</h2>
-        <ol class="prod__stages prod__stages--plain" style="margin-top:0">
-          <li><strong>Запись и сведение живых концертов</strong><span>Запись выступления и сведение живого звука</span></li>
-          <li><strong>Видео и фото</strong><span>Съёмка музыкальных видео, видеопродакшен, фотосъёмка. <a href="portfolio-video-photo.html">Примеры работ&nbsp;<span class="arr">→</span></a></span></li>
-        </ol>
+        <div>
+          <div class="sv-card"><h3 class="sv-card__t">Live запись</h3><p class="sv-card__d">Запись и сведение живых концертов.</p><p class="sv-card__l"><a class="more" href="portfolio-live.html">Примеры работ&nbsp;<span class="arr">→</span></a></p></div>
+          <div class="sv-card"><h3 class="sv-card__t">Видео и фото</h3><p class="sv-card__d">Съёмка музыкальных видео, видеопродакшен, фотосъёмка.</p><p class="sv-card__l"><a class="more" href="portfolio-video-photo.html">Примеры работ&nbsp;<span class="arr">→</span></a></p></div>
+        </div>
       </div>
 
       <div class="split">
@@ -88,14 +100,14 @@
           <h2 class="sec-title sec-title--sm">Как я работаю.</h2>
           <p class="sec-sub">Путь от идеи до готовой песни.</p>
         </div>
-        <ol class="prod__stages" style="margin-top:0">
+        <div class="sv-card"><ol class="prod__stages" style="margin-top:0;border-top:0">
           <li><span class="prod__n">01</span><strong>Знакомство и задача</strong><span>Вы присылаете демо, референсы или просто идею. Обсуждаем, что должно получиться, и договариваемся о сроках и стоимости</span></li>
           <li><span class="prod__n">02</span><strong>Музыкальная концепция</strong><span>Предлагаю направление звучания и показываю его на небольшом фрагменте, чтобы мы одинаково понимали результат до основной работы</span></li>
           <li><span class="prod__n">03</span><strong>Аранжировка</strong><span>Собираю песню целиком: партии, структура, саунд-дизайн. Промежуточные версии вы слышите по ходу работы, в том числе удалённо в формате стрима</span></li>
           <li><span class="prod__n">04</span><strong>Запись</strong><span>Организую запись вокала на студии. Если нужны живые инструменты, записываю их</span></li>
-          <li><span class="prod__n">05</span><strong>Сведение и правки</strong><span>Свожу дорожки в цельный микс. Вы слушаете, говорите, что поправить, и мы делаем до трёх серий правок</span></li>
-          <li><span class="prod__n">06</span><strong>Финальное звучание</strong><span>Мастеринг для площадок. Вы получаете готовую песню и минусовки с бэками и без, трек хранится в облаке в течение года</span></li>
-        </ol>
+          <li><span class="prod__n">05</span><strong>Сведение и правки</strong><span>Свожу дорожки в цельный микс. Вы слушаете, говорите, что поправить, и мы делаем до пяти раундов правок</span></li>
+          <li><span class="prod__n">06</span><strong>Финальное звучание</strong><span>Мастеринг для площадок. Вы получаете мастер-микс и немастеренный микс, стемы и инструментал с бэками и без бэков. Проект хранится в облаке в течение года</span></li>
+        </ol></div>
       </div>
     </div>
   </section>
