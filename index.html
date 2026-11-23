@@ -47,6 +47,35 @@
 /* У каждого слова имени свой градиент: светлый до середины, затем затемнение к низу */
 .hero h1.grad-white{background:none;padding-bottom:0}
 .hero h1 .w{display:block;padding-bottom:.03em;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-image:linear-gradient(180deg,#f5f3ee 0%,#f0eee8 50%,#8d8b86 100%)}
+/* Появление отзывов: сообщения по очереди, затем реакция */
+.msg:nth-child(1){--d:0s}
+.msg:nth-child(2){--d:1.1s}
+.js .msg{opacity:0;transform:translateY(26px) scale(.94);transform-origin:0 100%;transition:opacity .6s var(--ease) var(--d),transform .75s cubic-bezier(.2,.8,.2,1) var(--d)}
+.js .msg__react{opacity:0;transform:scale(.3);transition:opacity .3s ease calc(var(--d) + .7s),transform .5s cubic-bezier(.34,1.7,.5,1) calc(var(--d) + .7s)}
+.js .msgs.is-in .msg{opacity:1;transform:none}
+.js .msgs.is-in .msg__react{opacity:1;transform:none}
+.msgs{display:grid;gap:22px;max-width:640px;margin-top:28px}
+.msg{display:flex;align-items:flex-end;gap:12px;margin:0}
+.msg__ava{flex:none;width:44px;height:44px;border-radius:50%;object-fit:cover}
+.msg__bubble{position:relative;min-width:0;padding:8px 12px 7px;background:#182533;border-radius:16px 16px 16px 0;color:#f5f5f5;box-shadow:0 1px 1px rgba(0,0,0,.35)}
+.msg__bubble::before{content:"";position:absolute;bottom:0;left:-8px;width:16px;height:16px;background:#182533}
+.msg__bubble::after{content:"";position:absolute;bottom:0;left:-8px;width:8px;height:16px;background:var(--bg);border-bottom-right-radius:14px}
+.msg__name{display:block;margin:0 0 3px;font-size:.88rem;font-weight:600;line-height:1.25;color:var(--tg)}
+.msg__bubble p{margin:0;font-size:.98rem;line-height:1.45;color:#f5f5f5;overflow-wrap:anywhere}
+.msg__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.msg__react{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px 0 7px;border-radius:999px;background:#2b5278;font-size:.8rem;font-weight:600;line-height:1;color:#fff}
+.msg__react svg{width:14px;height:14px;display:block}
+.msg__time{margin-left:auto;font-size:.72rem;line-height:1;color:#6d7f8f;white-space:nowrap}
+@media(min-width:768px){.msgs{gap:26px;max-width:none;grid-template-columns:1fr 1fr;align-items:start}.msg:nth-child(even){margin-top:36px}.msg__ava{width:48px;height:48px}}
+.how{display:grid;gap:28px}
+.how__steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.how__steps li{display:grid;grid-template-columns:2.4rem 1fr;row-gap:2px;padding:18px 0;border-bottom:1px solid var(--line)}
+.how__steps .prod__n{grid-row:1/3;padding-top:.4em;font:500 .8rem/1 var(--font-mono);letter-spacing:.14em;color:var(--accent)}
+.how__steps strong{font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
+.how__steps li>span:last-child{color:var(--muted);font-size:.92rem;line-height:1.5}
+.how .svc__more{margin:0}
+.cta__box .avatar{width:min(46vw,170px);aspect-ratio:1;margin:0 auto 18px;display:block;border-radius:50%;object-fit:cover;object-position:50% 25%;box-shadow:0 0 0 1px var(--line-2),0 0 0 7px var(--bg),0 0 0 8px rgba(255,255,255,.55),0 30px 70px -30px rgba(0,0,0,.8)}
+.cta__who{margin:0 0 30px!important;max-width:none!important;font:500 .74rem/1.5 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .about-mini{text-align:center}
 .about-mini .quote{max-width:30em;margin:0 auto;font-size:clamp(1rem,3.9vw,1.15rem);line-height:1.6;color:#d8d6d0;font-style:italic}
 .about-mini .quote::before{content:"\201C";display:block;height:.45em;margin-bottom:.25em;font:700 4.5rem/1 Georgia,serif;color:#fff;opacity:.85}
@@ -65,7 +94,11 @@
   .actions .btn{padding-inline:28px}
   .covers{grid-template-columns:repeat(4,1fr);gap:16px;max-width:none}
   .svc{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
-  .about-mini .avatar{width:260px}
+  .how__steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;border-top:0}
+  .how__steps li{display:block;border-top:1px solid var(--line);border-bottom:0;padding:20px 0 0}
+  .how__steps .prod__n{display:block;margin-bottom:14px;padding:0}
+  .how__steps strong{display:block;margin-bottom:6px}
+  .cta__box .avatar{width:190px}
 }
 </style>
 </head>
@@ -94,7 +127,7 @@
       <div class="works__head">
         <h2 class="sec-title">Примеры работ.</h2>
         <p class="sec-note">Недавние проекты</p>
-        <p class="lead-big">Проекты, над которыми я работал. <span class="shine">Нажми</span> на обложку, чтобы послушать <em>результат</em>.</p>
+        <p class="lead-big">Проекты, над которыми я работал. Нажми на обложку, чтобы послушать <em>результат</em>.</p>
       </div>
       <div class="covers">
         <button class="cover" type="button" data-track data-src="assets/portfolio-audio/eduardo-ross-mi-amor.mp3" data-title="Mi Amor" data-artist="Eduardo Ross" data-cover="assets/portfolio-audio/eduardo-ross-mi-amor.webp" aria-label="Слушать: Eduardo Ross — Mi Amor"><img src="assets/portfolio-audio/eduardo-ross-mi-amor.webp" alt="" loading="lazy"></button>
@@ -117,7 +150,7 @@
           <div class="prod">
             <div class="prod__head">
               <strong>Продюсирование</strong>
-              <span>Работа над песней на всех этапах: аранжировка, запись, сведение и мастеринг — в одних руках</span>
+              <span>Довожу песню до финального звучания: аранжировка, запись, сведение и мастеринг. С выпуском помогаю разобраться</span>
             </div>
             <ol class="prod__stages">
               <li><span class="prod__n">01</span><strong>Аранжировка</strong><span>Создание музыкальной основы и звучания</span></li>
@@ -131,14 +164,43 @@
     </div>
   </section>
 
-  <!-- Обо мне -->
-  <section class="section" id="about">
-    <div class="container about-mini">
-      <h2 class="sec-title">Обо мне.</h2>
-      <p class="quote">Музыка — моя страсть и любовь с самого детства.</p>
-      <p class="about-mini__fact">Продюсер, звукорежиссёр, музыкант</p>
-      <img class="avatar" src="assets/img/about.webp" alt="Макс Малвин" width="440" height="440" loading="lazy">
-      <a class="more" href="about.html">Подробнее&nbsp;<span class="arr">→</span></a>
+  <!-- Как проходит работа -->
+  <section class="section" id="how">
+    <div class="container how">
+      <h2 class="sec-title">Как проходит работа.</h2>
+      <ol class="how__steps">
+        <li><span class="prod__n">01</span><strong>Присылаете идею</strong><span>Голосовая заметка с диктофона или демо, сделанное в Suno. Подойдёт любой набросок</span></li>
+        <li><span class="prod__n">02</span><strong>Обсуждаем реализацию</strong><span>Говорим о звучании, референсах, сроках и стоимости</span></li>
+        <li><span class="prod__n">03</span><strong>Записываем демо вокала</strong><span>Назначаем встречу, записываем демо, и после этого я начинаю работу над песней</span></li>
+      </ol>
+      <p class="svc__more"><a class="more" href="services.html#process">Подробнее о процессе&nbsp;<span class="arr">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="sec-title">Отзывы.</h2>
+      <div class="msgs">
+        <!-- ЗАМЕНИТЬ текст на реальный отзыв артиста перед публикацией -->
+        <figure class="msg" style="--tg:#6ab3f3">
+          <img class="msg__ava" src="assets/reviews/armen.webp" alt="Armen" width="96" height="96" loading="lazy">
+          <div class="msg__bubble">
+            <span class="msg__name">Armen</span>
+            <p>Макс, это просто космос! Слушаю трек по кругу и не могу остановиться. Ты услышал песню именно так, как я её чувствовал!</p>
+            <div class="msg__meta"><span class="msg__react"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff4d5e" d="M12 21.2l-1.5-1.3C5.4 15.3 2 12.2 2 8.4 2 5.4 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.4 22 8.4c0 3.8-3.4 6.9-8.5 11.5L12 21.2z"/></svg>1</span><span class="msg__time">22:14</span></div>
+          </div>
+        </figure>
+        <!-- ЗАМЕНИТЬ текст на реальный отзыв артиста перед публикацией -->
+        <figure class="msg" style="--tg:#ff8fb1">
+          <img class="msg__ava" src="assets/reviews/luciee.webp" alt="Luciee" width="96" height="96" loading="lazy">
+          <div class="msg__bubble">
+            <span class="msg__name">Luciee</span>
+            <p>Это невероятно! Я в полном восторге, у меня мурашки от каждого куплета. Спасибо тебе огромное за эту работу!</p>
+            <div class="msg__meta"><span class="msg__react"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff4d5e" d="M12 21.2l-1.5-1.3C5.4 15.3 2 12.2 2 8.4 2 5.4 4.4 3 7.4 3c1.7 0 3.4.8 4.6 2.1C13.2 3.8 14.9 3 16.6 3 19.6 3 22 5.4 22 8.4c0 3.8-3.4 6.9-8.5 11.5L12 21.2z"/></svg>1</span><span class="msg__time">23:02</span></div>
+          </div>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -146,6 +208,8 @@
   <section class="section cta" id="contact">
     <div class="container">
       <div class="cta__box">
+        <img class="avatar" src="assets/img/about.webp" alt="Макс Малвин" width="440" height="440" loading="lazy">
+        <p class="cta__who">Продюсер, звукорежиссёр, музыкант</p>
         <div class="cta__head">
           <span class="eyebrow">Контакты</span>
           <h2 class="grad-white">Обсудим ваш проект?</h2>
@@ -177,6 +241,17 @@
   </div>
 </footer>
 
+<script>
+(() => {
+  const box = document.querySelector('.msgs');
+  if (!box) return;
+  if (!('IntersectionObserver' in window)) { box.classList.add('is-in'); return; }
+  const io = new IntersectionObserver((e) => {
+    if (e[0].isIntersecting) { box.classList.add('is-in'); io.disconnect(); }
+  }, { threshold: 0.35 });
+  io.observe(box);
+})();
+</script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -26,8 +26,14 @@
 .list{display:grid;gap:16px}
 .item{padding:26px}
 .item h3{font-size:1.3rem}
-.item p{margin:0}
+.item p{margin:0 0 20px}
+.item{display:flex;flex-direction:column}
+.item__foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.item__foot .meta{font:.72rem var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+.mat-title{margin:0 0 20px;font-size:1.5rem}
 .tag{display:inline-block;margin-bottom:14px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;font:.72rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* подпись над названием: обычный текст, не кнопка */
+.item .tag{align-self:flex-start;padding:0;border:0;border-radius:0;margin-bottom:12px}
 @media(min-width:768px){
   .page-head{padding-block:72px 16px}
   .list{grid-template-columns:repeat(3,1fr);gap:20px}
@@ -41,16 +47,26 @@
     <div class="container">
       <span class="eyebrow">Материалы</span>
       <h1 class="sec-title">Материалы.</h1>
-      <p>Бесплатные PDF, полезные материалы и будущие продукты.</p>
+      <p>Бесплатные PDF и материалы, которыми я пользуюсь в работе с артистами.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <h2 class="mat-title">Бесплатные PDF</h2>
       <div class="list">
-        <article class="card item"><span class="tag">Скоро</span><h3>Бесплатные PDF</h3><p>Короткие практические гайды по музыкальному продакшену.</p></article>
-        <article class="card item"><span class="tag">Скоро</span><h3>Полезные материалы</h3><p>Подборки, чек-листы и советы из моей работы.</p></article>
-        <article class="card item"><span class="tag">Скоро</span><h3>Будущие продукты</h3><p>Курсы, шаблоны и другие инструменты для музыкантов.</p></article>
+        <article class="card item"><span class="tag">Бесплатно</span><h3>Шорткаты Studio Pro 8</h3><p>Горячие клавиши, которыми я пользуюсь в работе: основные и по разделам.</p><div class="item__foot"><span class="meta">PDF · 4 страницы</span><a class="more" href="assets/pdf/studio-pro-8-shortcuts.pdf" target="_blank" rel="noopener" download>Скачать PDF</a></div></article>
+        <article class="card item"><span class="tag">Бесплатно</span><h3>Чек-лист к первой сессии</h3><p>Что подготовить и что взять с собой, чтобы время в студии ушло на музыку.</p><div class="item__foot"><span class="meta">PDF · 2 страницы</span><a class="more" href="assets/pdf/checklist-pervaya-sessiya.pdf" target="_blank" rel="noopener" download>Скачать PDF</a></div></article>
+        <article class="card item"><span class="tag">Бесплатно</span><h3>Подготовка к сведению</h3><p>Как выгрузить дорожки и что приложить к проекту, чтобы сведение прошло с меньшим числом правок.</p><div class="item__foot"><span class="meta">PDF · 2 страницы</span><a class="more" href="assets/pdf/checklist-podgotovka-k-svedeniyu.pdf" target="_blank" rel="noopener" download>Скачать PDF</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="mat-title">Полезные материалы</h2>
+      <div class="list">
+        <article class="card item"><span class="tag">Полезное</span><h3>Цены на музыкальное продюсирование</h3><p>Из чего складывается стоимость, что входит в работу над песней и что считается отдельно.</p><div class="item__foot"><span class="meta">PDF · 2 страницы</span><a class="more" href="assets/pdf/ceny-muzykalnyj-prodakshen.pdf" target="_blank" rel="noopener" download>Скачать PDF</a></div></article>
       </div>
     </div>
   </section>

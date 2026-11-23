@@ -2,8 +2,8 @@
   const NAV = [
     ['index.html', 'Главная'],
     ['portfolio.html', 'Портфолио'],
-    ['portfolio-video-photo.html', 'Видео портфолио'],
     ['services.html', 'Услуги'],
+    ['price.html', 'Цены'],
     ['about.html', 'Обо мне'],
   ];
   const page = location.pathname.split('/').pop() || 'index.html';
@@ -19,6 +19,7 @@
       <li><a href="education.html">Обучение</a></li>
       <li><a href="materials.html">Материалы</a></li>
       <li><a href="artist.html">Артист</a></li>
+      <li><a href="portfolio-video-photo.html">Видео портфолио</a></li>
     </ul>
     <ul class="socials">
       <li><a href="https://t.me/MusicMaks" target="_blank" rel="noopener">Telegram</a></li>
