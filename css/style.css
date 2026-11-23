@@ -394,3 +394,8 @@ p{margin:0 0 1em;color:var(--muted);text-wrap:pretty}
 .shine{background:linear-gradient(100deg,var(--text) 0%,var(--text) 38%,var(--accent) 50%,var(--text) 62%,var(--text) 100%);background-size:250% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:600;animation:shine 3s ease-in-out infinite}
 @keyframes shine{0%{background-position:100% 0}60%,100%{background-position:0 0}}
 @media (prefers-reduced-motion:reduce){.shine{animation:none;background:none;-webkit-text-fill-color:var(--accent);color:var(--accent)}}
+
+/* Градиент заголовков считается на каждую строку отдельно: при переносе на телефоне все строки одинаково светлые */
+.sec-title{background-size:100% 1.05em}
+h2.grad-white{background-size:100% 1.08em}
+h1.grad-white{background-size:100% 1.02em}
